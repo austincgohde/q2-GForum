@@ -4,7 +4,11 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.string("first_name");
     table.string("last_name");
-    table.string("cohort");
+    table.integer("cohort_id")
+      .references('id')
+      .inTable("cohorts")
+      .onDelete("CASCADE")
+      .index();
     table.string("email");
     table.string("password");
     table.integer("auth_level");
