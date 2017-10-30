@@ -4,7 +4,7 @@ module.exports = {
       connection: {
         database: "gForum",
         connection: "localhost"
-      }
+      },
       migrations: {
           directory: __dirname + '/db/migrations',
         },
