@@ -11,4 +11,16 @@ app.get('/register', users.getRegister);
 
 app.post('/register', users.create);
 
+app.get('/update', users.myupdate);
+
+app.post('/update', users.update);
+
+app.get('/overview', users.overview);
+
+app.get('/helps/:type', posts.help);
+
+app.post('/helps', posts.reply);
+
+app.get('/resources', posts.resource);
+
 }
