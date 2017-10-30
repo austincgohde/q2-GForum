@@ -15,12 +15,14 @@ app.get('/update', users.myupdate);
 
 app.post('/update', users.update);
 
-app.get('/overview', users.overview);
+app.get('/overview', users.getOverview);
 
 app.get('/helps/:type', posts.help);
 
-app.post('/helps', posts.reply);
+app.post('/helps', posts.createHelp);
 
 app.get('/resources', posts.resource);
+
+app.post('/interestings/create', posts.interest);
 
 }
