@@ -5,8 +5,18 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('types').insert([
-        {name: 'web_development'},
-        {name: 'data_science'}
+        {name: 'interesting'},
+        {name: 'CSS'},
+        {name: 'JavaScript'},
+        {name: 'HTML'},
+        {name: 'Python'},
+        {name: 'Java'},
+        {name: 'C#'},
+        {name: 'Ruby'},
+        {name: 'PHP'},
+        {name: 'R'},
+        {name: 'C'},
+        {name: 'C++'}
       ]);
     });
 };
