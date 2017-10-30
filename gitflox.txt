@@ -1,0 +1,19 @@
+While in your branch --
+
+  git add .
+  git commit -m "Whatever it is"
+  git pull origin master
+  git push origin YourBranch
+
+
+--If feature is finished--
+
+Message out that the feature is finished
+Everyone repeats first flow
+Then Finished Member --
+  git add .
+  git commit -m "Whatever"
+  git checkout master
+  git merge YourBranch
+  git commit -m "Merge message"
+  git checkout yourBranch
