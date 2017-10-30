@@ -11,9 +11,9 @@ app.get('/register', users.getRegister);
 
 app.post('/register', users.create);
 
-app.get('/update', users.myupdate);
+app.get('/update', users.getProfile);
 
-app.post('/update', users.update);
+app.post('/update', users.updateProfile);
 
 app.get ('/profile/delete', users.delProfile);
 
