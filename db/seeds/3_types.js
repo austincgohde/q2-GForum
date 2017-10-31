@@ -6,17 +6,24 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('types').insert([
         {name: 'interesting'},
-        {name: 'CSS'},
-        {name: 'JavaScript'},
         {name: 'HTML'},
-        {name: 'Python'},
+        {name: 'CSS'},
+        {name: 'JS'},
+        {name: 'jQuery_&_DOM'},
+        {name: 'Ajax_&_HTTP'},
+        {name: 'Node'},
+        {name: 'Express'},
+        {name: 'Knex'},
+        {name: 'React'},
+        {name: 'Redux'},
+        {name: 'Angular'},
+        {name: 'Vue'},
         {name: 'Java'},
         {name: 'C#'},
-        {name: 'Ruby'},
-        {name: 'PHP'},
-        {name: 'R'},
-        {name: 'C'},
-        {name: 'C++'}
+        {name: '.Net'},
+        {name: 'Python'},
+        {name: 'Django'},
+        {name: 'Computer_Science'}
       ]);
     });
 };
