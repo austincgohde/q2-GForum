@@ -63,10 +63,17 @@
         <% for(let i = 0; i < interestings.length; i++) { %>
           <div id = "postTable">
           <p id = ""><%= interestings[i].title %><h1>
-          <p id = ""><%= interestings[i].first_name %> <%= interestings[i].last %><h2>
+          <p id = ""><%= interestings[i].first_name %> <%= interestings[i].last_name %><h2>
           <p id = ""><%= interestings[i].content %><h1>
           </div>
-        <% } %>
-      </div>
+        <% } %>3
+      </div>d
+      <form action="/interestings/create" method="post" id = "newInterersting">
+          <input type="text" name="title" placeholder="Title">
+          <input type="text" name="first_name" placeholder="First Name">
+          <input type="text" name="last_name" placeholder="Last Name">
+          <textarea name="content" form="newInteresting">Enter text here...</textarea>
+          <button type="submit" class="">Submit!</button>
+        </form>
 </body>
 </html>

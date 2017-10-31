@@ -468,3 +468,16 @@ btn btn-primary btn-block btn-large
   border-radius: 6px;
   border: 2px solid black;
 }
+
+.link:visited {
+  color: #62b4c2;
+}
+.link:hover {
+  color: #62b4c2;
+}
+.link:focus {
+  color: #62b4c2;
+}
+.link:active {
+  color: #62b4c2;
+}
