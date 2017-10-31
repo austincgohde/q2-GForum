@@ -16,3 +16,16 @@ Then Finished Member --
   git checkout master
   git merge YourBranch
   git checkout yourBranch
+
+
+
+EJS Pages:
+Names for EJS pages:
+
+index - log in page
+profile - update and profile information
+register - registration page
+overview - page with all of the types of helps and listing the interesting
+subject - specific language with the posts listed
+post - specific post listing the comments with the post
+resources - Page listing all resources for developers
