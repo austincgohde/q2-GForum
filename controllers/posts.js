@@ -40,7 +40,7 @@ const encryption = require("../config/encryption.js");
    singlePost: function(req, res){
      knex('posts')
      .where('id', req.params.id)
-     .select('title', 'content', 'type.name', 'users.first_name', 'upvotes', 'downvotes')
+     .select('title', 'content', 'types.name', 'users.first_name', 'upvotes', 'downvotes')
      .join('users', 'users.id', 'posts.user_id')
      .join('types', 'types.id', 'posts.type_id')
      .then((result)=>{
