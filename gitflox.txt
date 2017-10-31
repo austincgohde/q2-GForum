@@ -15,5 +15,4 @@ Then Finished Member --
   git commit -m "Whatever"
   git checkout master
   git merge YourBranch
-  git commit -m "Merge message"
   git checkout yourBranch
