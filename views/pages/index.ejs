@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>gForum</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
       <script type="text/javascript" src="homepage.js" defer></script>
       <link rel="stylesheet" href="../public/style.css">
@@ -12,29 +13,33 @@
       <link rel="stylesheet" href="css/animations.css" type="text/css">
   </head>
 <ul class = "navbar" style="list-style: none;">
-  <li><a class="active" href="/register">Create Account</a></li>
+  <li><a class="active" href="/register">GALVANIZE</a></li>
+  <li><a class="active" href="/register">LEARN</a></li>
+  <li><a class="active" href="/register">MEMBER</a></li>
+  <li><a class="active" href="/register">TALENT</a></li>
+  <li><a class="active" href="/register">SLACK</a></li>
+  <li><a class="active" href="/register">GITHUB</a></li>
+  <li><a class="active" href="/register">TRELLO</a></li>
 </ul>
 <body class = "homepageBody">
   <div class = 'container'>
     <div id = "aboutContent">
-      <p id = "standardBody">About Info<p>
-      <p id = "standardBody">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat c</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat c</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat c</p>
     </div>
     <div id = "logInContent">
       <img src = "../public/galvanize.png" width="200px;">
-      <br>
-      <br>
-      <br>
-      <p id = "logoTitle">gForum</p>
+      <p id = "logoTitleMain">gForum</p>
       <p id = "logoSubTitle">For All Things Interesting and Helpful</p>
-      <h2 id = "">Log In!</h2>
+      <h2 id = "">Login</h2>
       <form action="/login" method="post" id = "">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
-      </form>
-      <p id = "standardBody">Not a user? <a href = "/register"><b>Click here</b></a> to register!</p>
+        	<input type="email" name="email" placeholder="Email">
+          <input type="password" name="password" placeholder="Password">
+          <button type="submit" class="btn btn-primary btn-block btn-large">Let me in!</button>
+        </form>
+        <p id = "standardBody">Not a Member? <a href = "/register"><b>Sign Up</b></a></p>
+    </div>
     </div>
   </div>
 </body>
