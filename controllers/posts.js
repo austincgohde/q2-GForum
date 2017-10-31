@@ -16,7 +16,7 @@ const encryption = require("../config/encryption.js");
        .join('types', 'types.id', 'posts.type_id')
        .where('type_id', result[0].id)
        .then((result) => {
-         res.render('/getHelp', info: result)
+         res.render('pages/subject', {info: result} )
        })
      })
    },
