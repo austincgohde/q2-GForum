@@ -6,7 +6,7 @@ module.exports = {
   index: (req, res) => {
 
     if(!req.session.user) {
-      req.session.user = {};
+      req.session.user = 0;
     }
 
     if(!req.session.errMsg) {
