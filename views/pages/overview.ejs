@@ -7,49 +7,66 @@
       <script type="text/javascript" src="homepage.js" defer></script>
       <link rel="stylesheet" href="/style.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Mada|Six+Caps|Grand+Hotel" rel="stylesheet">
       <link rel="stylesheet" href="css/animations.css" type="text/css">
+      <link rel="shortcut icon" href="/titlepic.jpeg">
+      <link rel="apple-touch-icon" href="/titlepic.jpeg">
   </head>
 <body class = "overviewBody">
   <ul class = "navbar" style="list-style: none;">
-    <li><a class="active" href="/register">GALVANIZE</a></li>
-    <li><a class="active" href="/register">LEARN</a></li>
-    <li><a class="active" href="/register">MEMBER</a></li>
-    <li><a class="active" href="/register">TALENT</a></li>
-    <li><a class="active" href="/register">SLACK</a></li>
-    <li><a class="active" href="/register">GITHUB</a></li>
-    <li><a class="active" href="/register">TRELLO</a></li>
+    <li><a class="active" href="/login"><b>-LOG OUT-</b></a></li>
+    <li><a class="active" href="/login"><b>-UPDATE PROFILE-</b></a></li>
+    <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
+    <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
+    <li><a class="active" href="https://members.galvanize.com/">MEMBER</a></li>
+    <li><a class="active" href="https://talent.galvanize.com/">TALENT</a></li>
+    <li><a class="active" href="https://gstudents.slack.com/">SLACK</a></li>
+    <li><a class="active" href="https://github.com/">GITHUB</a></li>
+    <li><a class="active" href="https://trello.com/">TRELLO</a></li>
   </ul>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p id = "logoTitleOverview">Welcome, <%= user %>!</p>
   <div class = "sectionDiv">
-  </div>
-  <div class = "sectionDiv">
-  <p id = "logoTitle">Helps</p>
+  <p id = "logoTitle">Helps:</p>
   </div>
       <div>
       <ul class="flex-container">
-          <li class="flex-item"><img src="../html.png" height = "150px"alt="HTML" title="HTML"></li>
-          <li class="flex-item"><img src="../css.png" height = "150px"alt="CSS" title = "CSS"></li>
-          <li class="flex-item"><img src="../js.png" height = "150px"alt="JS" title = "Javascript"></li>
-          <li class="flex-item"><img src="../jquery.png" height = "100px"alt="jQuery & The DOM" title = "jQuery & The DOM"></li>
-          <li class="flex-item"><img src="../ajax.png" height = "100px"alt="AJAX & HTTP Requests" title = "AJAX & HTTP Requests"></li>
-          <li class="flex-item"><img src="../node.png" height = "100px"alt="Node JS" title = "Node JS"></li>
-          <li class="flex-item"><img src="../express.png" height = "40px"alt="EXPRESS" title = "EXPRESS"></li>
-          <li class="flex-item"><img src="../knex.png" height = "60px"alt="KNEX" title = "KNEX"></li>
-          <li class="flex-item"><img src="../react.png" height = "60px"alt="React" title = "React"></li>
-          <li class="flex-item"><img src="../redux.png" height = "60px"alt="Redux" title = "Redux"></li>
-          <li class="flex-item"><img src="../angular.png" height = "60px"alt="Angular" title = "Angular"></li>
-          <li class="flex-item"><img src="../vue.png" height = "110px"alt="Vue" title = "Vue"></li>
-          <li class="flex-item"><img src="../java.png" height = "100px"alt="Java" title = "Java"></li>
-          <li class="flex-item"><img src="../csharp.png" height = "60px"alt="C#" title = "C#"></li>
-          <li class="flex-item"><img src="../net.png" height = "100px"alt=".net" title = ".net"></li>
-          <li class="flex-item"><img src="../python.png" height = "70px"alt="Python" title = "Python"></li>
-          <li class="flex-item"><img src="../django.png" height = "60px"alt="Django" title = "Django"></li>
-          <li class="flex-item"><img src="../cs.png" height = "60px"alt="Computer Science" title = "Computer Science"></li>
+          <a href = "/helps/HTML"><li class="flex-item"><img src="../html.png" height = "150px"alt="HTML" title="HTML"></li></a>
+          <a href = "/helps/CSS"><li class="flex-item"><img src="../css.png" height = "150px"alt="CSS" title = "CSS"></li></a>
+          <a href = "/helps/JS"><li class="flex-item"><img src="../js.png" height = "140px"alt="JS" title = "Javascript"></li></a>
+          <a href = "/helps/jQuery_&_DOM"><li class="flex-item"><img src="../jquery.png" height = "100px"alt="jQuery & The DOM" title = "jQuery & The DOM"></li></a>
+          <a href = "/helps/Ajax_&_HTTP"><li class="flex-item"><img src="../ajax.png" height = "100px"alt="AJAX & HTTP Requests" title = "AJAX & HTTP Requests"></li></a>
+          <a href = "/helps/Node"><li class="flex-item"><img src="../node.png" height = "100px"alt="Node JS" title = "Node JS"></li></a>
+          <a href = "/helps/Express"><li class="flex-item"><img src="../express.png" height = "40px"alt="EXPRESS" title = "EXPRESS"></li></a>
+          <a href = "/helps/Knex"><li class="flex-item"><img src="../knex.png" height = "60px"alt="KNEX" title = "KNEX"></li></a>
+          <a href = "/helps/React"><li class="flex-item"><img src="../react.png" height = "60px"alt="React" title = "React"></li></a>
+          <a href = "/helps/Redux"><li class="flex-item"><img src="../redux.png" height = "60px"alt="Redux" title = "Redux"></li></a>
+          <a href = "/helps/Angular"><li class="flex-item"><img src="../angular.png" height = "50px"alt="Angular" title = "Angular"></li></a>
+          <a href = "/helps/Vue"><li class="flex-item"><img src="../vue.png" height = "110px"alt="Vue" title = "Vue"></li></a>
+          <a href = "/helps/Java"><li class="flex-item"><img src="../java.png" height = "100px"alt="Java" title = "Java"></li></a>
+          <a href = "/helps/C#"><li class="flex-item"><img src="../csharp.png" height = "110px"alt="C#" title = "C#"></li></a>
+          <a href = "/helps/.Net"><li class="flex-item"><img src="../net.png" height = "100px"alt=".net" title = ".net"></li></a>
+          <a href = "/helps/Python"><li class="flex-item"><img src="../python.png" height = "70px"alt="Python" title = "Python"></li></a>
+          <a href = "/helps/Django"><li class="flex-item"><img src="../django.png" height = "60px"alt="Django" title = "Django"></li></a>
+          <a href = "/helps/Computer_Science"><li class="flex-item"><img src="../cs.png" height = "60px"alt="Computer Science" title = "Computer Science"></li></a>
         </ul>
       </div>
       <div class = "sectionDiv">
-      <p id = "logoTitle">Interestings</p>
+      <p id = "logoTitle">Interestings:</p>
+    </div>
+      <div class = "interestingsDiv">
+        <% for(let i = 0; i < interestings.length; i++) { %>
+          <div id = "postTable">
+          <p id = ""><%= interestings[i].title %><h1>
+          <p id = ""><%= interestings[i].first_name %> <%= interestings[i].last %><h2>
+          <p id = ""><%= interestings[i].content %><h1>
+          </div>
+        <% } %>
       </div>
 </body>
 </html>
