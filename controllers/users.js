@@ -51,7 +51,7 @@ module.exports = {
   },
 
   getRegister: (req, res) => {
-    res.render("register");
+    res.render("pages/register");
   },
 
   create: (req, res) => {
@@ -97,7 +97,7 @@ module.exports = {
           .whereNot("id", 1)
           .then((result) => {
 
-            res.render("overview", { interestings: interesting, types: result, user: req.session.user.name})
+            res.render("pages/overview", { interestings: interesting, types: result, user: req.session.user.name})
           })
       })
   },
@@ -106,7 +106,7 @@ module.exports = {
     knex("users")
       .where("id", req.session.user.id)
       .then((result) => {
-        res.render("profile", { user: result[0] })
+        res.render("pages/profile", { user: result[0] })
       })
       .catch((err) => {
         console.error(err);
