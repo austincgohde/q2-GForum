@@ -7,7 +7,7 @@ app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-require('./config/session.js')(app);
+require('./config/sessions.js')(app);
 
 app.set('view engine', 'ejs');
 
