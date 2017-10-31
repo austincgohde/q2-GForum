@@ -13,7 +13,7 @@ module.exports = {
       req.session.errMsg = "";
     }
 
-    res.render("index", { errMsg: req.session.errMsg });
+    res.render("pages/index", { errMsg: req.session.errMsg });
 
   },
 

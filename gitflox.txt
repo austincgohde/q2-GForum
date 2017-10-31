@@ -20,8 +20,6 @@ Then Finished Member --
 
 
 EJS Pages:
-Names for EJS pages:
-
 index - log in page
 profile - update and profile information
 register - registration page
