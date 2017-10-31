@@ -1,7 +1,7 @@
 const knex = require('../db/knex.js');
 const encryption = require("../config/encryption.js");
 
-//getHelp attempt 3:
+//Helps:
  module.exports = {
 
    getHelp: function(req, res){
@@ -32,10 +32,10 @@ const encryption = require("../config/encryption.js");
          .then((result)=>{
            res.redirect('/helps/'+result[0].id, result)
          })
-                   .catch((err) => {
-                     console.error(err)
-                   });
-                 },
+          .catch((err) => {
+            console.error(err)
+          });
+          },
 
    singlePost: function(req, res){
      knex('posts')
@@ -59,37 +59,31 @@ const encryption = require("../config/encryption.js");
 
 
    resource: function(req, res){
-     knex('types')
-     .where('name', req.params.type)
-     .select('id')
-     .then((result)=>{
-       req.session.type.id = result[0].id;
        knex('resources')
-       .select("link", 'blurb', 'upvote', 'downvote', 'type.name', 'users.first_name', 'comments')
-       .join('users', 'users.id', 'posts.user_id')
-       .join('types', 'types.id', 'posts.type_id')
-       .where('type_id', result[0].id)
        .then((result) => {
          res.render('/resources', {info: result} )
        })
-     })
+       .catch((err) => {
+         console.error(err)
+       });
    },
 
-/*     createHelp: function(req, res){
-       knex('posts')
+    addResource: function(req, res){
+       knex('resources')
          .insert({
-           title: req.body.title,
-           content: req.body.content,
-           user_id: req.session.user.id,
-           type_id: req.session.type.id
+           link: req.body.link,
+           blurb: req.body.blurb
          }, '*')
          .then((result)=>{
-           res.redirect('/helps/'+result[0].id, result)
+           res.redirect('/resources/create'+result[0].id, result)
          })
-                   .catch((err) => {
-                     console.error(err)
-                   });
-                 },
+        .catch((err) => {
+          console.error(err)
+         });
+        },
+
+//Interestings:        
+                 /*
 
    singlePost: function(req, res){
      knex('posts')
@@ -109,49 +103,7 @@ const encryption = require("../config/encryption.js");
      });
    }, */
 
-/*     resource: function(req, res){
-       knex('posts')
-         .then((postsResults)=>{
-           knex('users')
-             .where('user_id', req.params.id)
-               .then((usersResults)=>{
-                 .knex('types')
-                   .where('type_id', req.params.id)
-                   .then((typesResults)=>{
-                     .knex('comments')
-                       .where('user_id',req.params.id)
-                         .then((commentsResults)=>{
-                           res.render('/resources', {posts: postResults[0], users: usersResults, types: typesResults, comments: commentsResults});
-                         });
-                       });
-                     });
-                   });
-                   .catch((err) => {
-                     console.error(err)
-                   });
-                 },
-
-     addResource: function(req, res){
-       knex('posts')
-         .then((postsResults)=>{
-           knex('users')
-             .where('user_id', req.params.id)
-               .then((usersResults)=>{
-                 .knex('types')
-                   .where('type_id', req.params.id)
-                   .then((typesResults)=>{
-                     .knex('comments')
-                       .where('user_id',req.params.id)
-                         .then((commentsResults)=>{
-                           res.render('/resources/create', {posts: postResults[0], users: usersResults, types: typesResults, comments: commentsResults});
-                         });
-                       });
-                     });
-                   });
-                   .catch((err) => {
-                     console.error(err)
-                   });
-                 },
+/*
 
      interest: function(req, res){
        knex('posts')
