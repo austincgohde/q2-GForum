@@ -51,7 +51,11 @@ module.exports = {
   },
 
   getRegister: (req, res) => {
-    res.render("pages/register");
+
+    knex("cohorts")
+      .then((result) => {
+        res.render("pages/register", { cohorts: result })
+      })
   },
 
   create: (req, res) => {
