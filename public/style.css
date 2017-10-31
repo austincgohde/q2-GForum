@@ -291,7 +291,6 @@ li a {
 
 .flex-container {
   font-family: 'Mada', sans-serif;
-  border: 1px solid orange;
   text-align: center;
   list-style: none;
   display: -webkit-box;
@@ -300,7 +299,10 @@ li a {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
-  justify-content: space-around;}
+  justify-content: space-evenly;
+  padding: 0px 10px;
+
+}
 
 .flex-item {
   padding: 5px;
