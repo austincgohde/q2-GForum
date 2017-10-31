@@ -27,9 +27,11 @@
         <input type="email" name="email" placeholder="Email">
         <br>
         <select name="cohort">
-          <option value="___" disabled selected>Select Cohort</option>
-         <option value="____">WDI - g66</option>
-       </select>
+                  <option disabled selected>Select Cohort</option>
+                 <% for(let i = 0; i < cohorts.length; i++) { %>
+                   <option value="<%= cohorts[i].id %>"><%= cohorts[i].name %></option>
+                 <% } %>
+               </select>
        <br>
         <input type="password" name="password" placeholder="Password">
         <input type="password" name="password" placeholder="Confirm Password">

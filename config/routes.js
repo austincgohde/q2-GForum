@@ -24,13 +24,13 @@ app.get('/helps/:type', posts.getHelp);
 
 app.post('/helps', posts.createHelp);
 
-app.get('/resources', posts.resource);
-
-app.post('/resources/create', posts.addResource);
-
-app.post('/interestings/create', posts.interest);
-
-app.get('/singlepost', posts.singlePost);
+// app.get('/resources', posts.resource);
+//
+// app.post('/resources/create', posts.addResource);
+//
+// app.post('/interestings/create', posts.interest);
+//
+// app.get('/singlepost', posts.singlePost);
 
 //app.get('/admin', )
 
