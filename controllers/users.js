@@ -93,16 +93,12 @@ module.exports = {
   },
 
   getOverview: (req, res) => {
-    knex.raw(`SELECT posts.title, posts.content, posts.upvote, posts.downvote, users.first_name FROM posts JOIN users ON users.id = posts.user_id JOIN types ON types.id = posts.type_id`)
+    knex("posts")
+      .where("type_id", 1)
+      .select("posts.title, posts.content, users.first_name, users.last_name")
+      .orderBy("created_at", "desc")
       .then((result) => {
-        let interesting = result.rows;
-
-        knex("types")
-          .whereNot("id", 1)
-          .then((result) => {
-
-            res.render("pages/overview", { interestings: interesting, types: result, user: req.session.user.name})
-          })
+        res.render("pages/overview", { interestings: result});
       })
   },
 
