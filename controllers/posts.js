@@ -7,18 +7,23 @@ const encryption = require("../config/encryption.js");
    getHelp: function(req, res){
      knex('types')
      .where('name', req.params.type)
-     .select('id')
      .then((result)=>{
-       req.session.type.id = result[0].id;
-       console.log(req.session.type.id);
+       req.session.type = result[0];
        knex('posts')
        .select("title", 'content', 'upvote', 'downvote', 'types.name', 'users.first_name', 'users.last_name')
        .join('users', 'users.id', 'posts.user_id')
        .join('types', 'types.id', 'posts.type_id')
        .where('type_id', result[0].id)
        .then((result) => {
+         let posts = result;
 
-         res.render('pages/subject', {posts: result} )
+         for(let i = 0; i < posts.length; i++) {
+           let timeFormat = String(posts[i].created_at).slice(0, 21);
+           posts[i].created_at = timeFormat;
+         }
+
+         console.log(result);
+         res.render('pages/subject', {posts: result, type: req.session.type.name} )
        })
      })
    },
