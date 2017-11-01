@@ -474,7 +474,7 @@ btn btn-primary btn-block btn-large
   background-color: white;
   opacity: .7;
   border-radius: 6px;
-  border: 2px solid black;
+  overflow-y: scroll;
 }
 
 .link:visited {
@@ -488,4 +488,41 @@ btn btn-primary btn-block btn-large
 }
 .link:active {
   color: #62b4c2;
+}
+
+#content {
+  word-break: break-all;
+  font-family: 'Mada', sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+#contentTitle {
+  font-family: 'Six Caps', sans-serif;
+  font-size: 60px;
+  line-height: 34px;
+  height: 35px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+#contentAuthor {
+  font-family: 'Six Caps', sans-serif;
+  font-size: 30px;
+  line-height: 34px;
+  height: 35px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+#contentTimestamp {
+  font-family: 'Mada', sans-serif;
+  font-size: 20px;
+  line-height: 34px;
+  height: 35px;
+  margin-left: 10px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
