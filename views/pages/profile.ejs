@@ -20,7 +20,8 @@
       <br>
       <p id = "logoTitleReg">gForum</p>
       <br>
-        <p id = "logoTitle2">Updating <%= user.first_name %> <%= user.last_name %>'s Profile </h2>
+        <p id = "logoTitle2">Welcome to your profile page, <%= user.first_name %>!</h2>
+          <p id = "logoTitle2">Edit the fields below to update your information.</h2>
           <br>
       <form action="/login" method="post" id = "">
         <input type="text" name="firstName" value="<%= user.first_name %>">

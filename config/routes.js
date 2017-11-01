@@ -12,7 +12,7 @@ app.get('/register', users.getRegister);
 
 app.post('/register', users.create);
 
-app.get('/profile', users.getProfile);
+app.get('/update', users.getProfile);
 
 app.post('/update', users.updateProfile);
 
