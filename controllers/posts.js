@@ -8,13 +8,14 @@ const encryption = require("../config/encryption.js");
      knex('types')
      .where('name', req.params.type)
      .then((result)=>{
+       console.log(req.session.type);
        req.session.type = result[0];
 
        if(req.session.type.name.includes("_")) {
          req.session.type.name = req.session.type.name.replace(/_/g, " ");
        }
 
-       console.log(req.session.type);
+
 
        knex('posts')
        .select("title", 'content', 'upvote', 'downvote', 'types.name', 'users.first_name', 'users.last_name')
