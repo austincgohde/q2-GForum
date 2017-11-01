@@ -18,7 +18,6 @@ Then Finished Member --
   git checkout yourBranch
 
 
-
 EJS Pages:
 index - log in page
 profile - update and profile information
