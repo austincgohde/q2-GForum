@@ -5,7 +5,6 @@
     <title>gForum</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="homepage.js" defer></script>
       <link rel="stylesheet" href="/style.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,7 +15,7 @@
   </head>
   <ul class = "navbar" style="list-style: none;">
     <li><a class="active" href="/overview">HOME</a></li>
-    <li><a class="active" href="/">LOG OUT</a></li>
+    <li><a class="active" href="/logout">LOG OUT</a></li>
     <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
     <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
     <li><a class="active" href="https://members.galvanize.com/">MEMBER</a></li>
@@ -25,11 +24,37 @@
     <li><a class="active" href="https://github.com/">GITHUB</a></li>
     <li><a class="active" href="https://trello.com/">TRELLO</a></li>
   </ul>
+  <body class = "postBody">
   <div class = "sectionDiv">
-  <p id = "logoTitleMain">Post Title:, <%=  %>!</p>
+    <p id = "logoTitle">Post:</p>
+    <div id = "postTable2">
+        <p id = "contentTimestamp">Created on<%= post.created_at %></p>
+        <p id = "contentTitle"><%= posts[i].title %><p>
+        <p id = "contentAuthor"> by <%= posts.first_name %> <%= posts.last_name %><p>
+        <p id = "content"><%= posts.content %><p>
+        <p id = "content"><%= posts.upvotes %><p>
+        <p id = "content"><%= posts.downvotes %><p>
+  </div>
   </div>
   <div class = "sectionDiv">
-  <p id = "logoTitle">Comments</p>
+  <p id = "logoTitle">Comments:v">
+    <% for(let i = 0; i < comments.length; i++) { %>
+      <div id = "postTable2">
+      <p id = "contentTimestamp">Created on<%= comments[i].created_at %></p>
+      <p id = "contentAuthor"> by <%= comments[i].first_name %> <%= comments[i].last_name %><p>
+      <p id = "content"><%= comments[i].content %><p>
+      <p id = "content"><%= comments[i].upvotes %><p>
+      <p id = "content"><%= comments[i].downvotes %><p>
+      </div>
+    <% } %>
+  </div>
+  <div class = 'newSubmit'>
+    <p id = "logoTitle"> New Comment:</p>
+  <form action="" method="post" id = "newInteresting">
+      <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter comment here"></textarea>
+      <br>
+      <button type="submit" id="submitButton">Submit!</button>
+    </form>
   </div>
 </body>
 </html>

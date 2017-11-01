@@ -5,7 +5,6 @@
     <title>gForum</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="homepage.js" defer></script>
       <link rel="stylesheet" href="/style.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -17,7 +16,7 @@
   <body class = "subjectBody">
   <ul class = "navbar" style="list-style: none;">
     <li><a class="active" href="/overview"><b>HOME</b></a></li>
-    <li><a class="active" href="/"><b>LOG OUT</b></a></li>
+    <li><a class="active" href="/logout"><b>LOG OUT</b></a></li>
     <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
     <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
     <li><a class="active" href="https://members.galvanize.com/">MEMBER</a></li>
@@ -41,18 +40,23 @@
   <a class = "postLinks" href = "/helps/:type/:id"><div class = "interestingsDiv">
     <% for(let i = 0; i < posts.length; i++) { %>
       <div id = "postTable2">
-      <p id = "contentTimestamp">Created at <%= posts[i].created_at %></p>
+      <p id = "contentTimestamp">Created on<%= posts[i].created_at %></p>
       <p id = "contentTitle"><%= posts[i].title %><p>
       <p id = "contentAuthor"> by <%= posts[i].first_name %> <%= posts[i].last_name %><p>
       <p id = "content"><%= posts[i].content %><p>
+      <p id = "content"><%= posts[i].upvotes %><p>
+      <p id = "content"><%= posts[i].downvotes %><p>
       </div>
     <% } %>
   </div></a>
-  <p id = "logoTitle">Submit a New Post:</p>
+  <div class = 'newSubmit'>
+    <p id = "logoTitle"> New <%= type %> Post:</p>
   <form action="/helps" method="post" id = "newInteresting">
-      <input type="text" name="title" placeholder="Title">
-      <button type="submit" class="">Submit!</button>
+      <input type="text" name="title" placeholder="Title" id = "inputTitle">
+      <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
+      <br>
+      <button type="submit" id="submitButton">Submit!</button>
     </form>
-    <textarea name="content" form="newInteresting">Enter text here...</textarea>
+  </div>
 </body>
 </html>
