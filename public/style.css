@@ -173,7 +173,6 @@ li a {
 
 .sectionDiv {
   text-align: center;
-  color: orange;
   margin-top: 30px;
   text-align: left;
   padding-left: 60px;
@@ -277,7 +276,20 @@ li a {
   font-family: 'Grand Hotel', cursive;
   font-size: 80px;
   display: inline-block;
-  color: white;
+  color: orange;
+  line-height: 34px;
+  height: 35px;
+  margin-top: 50px;
+  margin-bottom: 0;
+  z-index: 2;
+}
+
+
+#logoTitle2 {
+  font-family: 'Grand Hotel', cursive;
+  font-size: 40px;
+  display: inline-block;
+  color: black;
   line-height: 34px;
   height: 35px;
   margin-top: 50px;
@@ -440,26 +452,22 @@ btn btn-primary btn-block btn-large
 
 .interestingsDiv {
   padding: 5px;
-  width: 200px;
+  width: 80%;
   height: 550px;
   max-height: 550px;
   overflow-y: scroll;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: white;
-  background-color: white;
-  opacity: .7;
-  border-radius: 6px;
-  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 
 #postTable {
   padding: 5px;
-  width: 200px;
-  height: 550px;
-  max-height: 550px;
-  overflow-y: scroll;
+  width: 100%;
+  height: auto;
   margin-top: 20px;
   margin-bottom: 20px;
   color: black;
@@ -467,4 +475,17 @@ btn btn-primary btn-block btn-large
   opacity: .7;
   border-radius: 6px;
   border: 2px solid black;
+}
+
+.link:visited {
+  color: #62b4c2;
+}
+.link:hover {
+  color: #62b4c2;
+}
+.link:focus {
+  color: #62b4c2;
+}
+.link:active {
+  color: #62b4c2;
 }
