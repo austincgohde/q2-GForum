@@ -561,3 +561,14 @@ btn btn-primary btn-block btn-large
 .postLinks {
   text-decoration: none;
 }
+
+.newSubmit {
+  padding: 5px;
+  width: 90%;
+  height: 250px;
+  max-height: 250px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}

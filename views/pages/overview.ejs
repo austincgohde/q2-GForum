@@ -15,7 +15,7 @@
   </head>
 <body class = "overviewBody">
   <ul class = "navbar" style="list-style: none;">
-    <li><a class="active" href="/">LOG OUT</a></li>
+    <li><a class="active" href="/logout">LOG OUT</a></li>
     <li><a class="active" href="/profile">UPDATE PROFILE</a></li>
     <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
     <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
@@ -62,18 +62,20 @@
       <div class = "interestingsDiv">
         <% for(let i = 0; i < interestings.length; i++) { %>
           <div id = "postTable">
-          <p id = "contentTimestamp">Created at <%= interestings[i].created_at %></p>
+          <p id = "contentTimestamp">Created on <%= interestings[i].created_at %></p>
           <p id = "contentTitle"><%= interestings[i].title %><p>
           <p id = "contentAuthor"> by <%= interestings[i].first_name %> <%= interestings[i].last_name %><p>
           <p id = "content"><%= interestings[i].content %><p>
           </div>
         <% } %>
       </div>
-      <p id = "logoTitle">Submit a New Interesting:</p>
+      <div class = 'newSubmit'>
+        <p id = "logoTitle">Submit a New Interesting:</p>
       <form action="/helps" method="post" id = "newInteresting">
           <input type="text" name="title" placeholder="Title">
           <button type="submit" class="">Submit!</button>
         </form>
-        <textarea name="content" form="newInteresting">Enter text here...</textarea>
+        <textarea name="content" form="newInteresting" cols="180;">Enter text here...</textarea>
+      </div>
 </body>
 </html>
