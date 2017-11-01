@@ -8,13 +8,11 @@ const encryption = require("../config/encryption.js");
      console.log("SOmething shit");
      knex('types')
      .where('name', req.params.type)
-     .then((result)=>{
+     .then((result) => {
        console.log("Hello");
        console.log(result);
-       req.session.type = {
-         id: result[0].id,
-         name: result[0].name
-       };
+
+       req.session.type = result[0];
 
        if(req.session.type.name.includes("_")) {
          console.log("Hi");
@@ -22,10 +20,10 @@ const encryption = require("../config/encryption.js");
        }
 
        knex('posts')
-       .select("title", 'content', 'upvote', 'downvote', 'types.name', 'users.first_name', 'users.last_name')
+       .select("posts.title", 'posts.content', 'posts.upvote', 'posts.downvote', 'types.name', 'users.first_name', 'users.last_name')
        .join('users', 'users.id', 'posts.user_id')
        .join('types', 'types.id', 'posts.type_id')
-       .where('type_id', result[0].id)
+       .where('posts.type_id', req.session.type.id)
        .then((result) => {
          let posts = result;
          console.log("Some stupid shit");
@@ -33,13 +31,13 @@ const encryption = require("../config/encryption.js");
            let timeFormat = String(posts[i].created_at).slice(0, 21);
            posts[i].created_at = timeFormat;
          }
-       res.render('pages/subject', {posts: result, type: req.session.type.name} )
+       res.render('pages/subject', {posts: posts, type: req.session.type} )
 
        }).catch((err)=>{
          console.log(err);
        })
 
-      // res.send("HELLO!")
+
     }).catch((err)=>{
       console.log(err);
     })

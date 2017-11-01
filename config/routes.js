@@ -14,7 +14,7 @@ app.get('/register', users.getRegister);
 
 app.post('/register', users.create);
 
-// app.use(userAuth);
+app.use(userAuth);
 
 app.get('/profile', users.getProfile);
 
@@ -28,9 +28,7 @@ app.post('/helps', posts.createHelp);
 
 app.get('/helps/:type', posts.getHelp);
 
-
-
-// app.get('/helps/:type/:id', posts.singlePost);
+app.get('/helps/:type/:id', posts.singlePost);
 
 app.get('/resources', posts.resource);
 
