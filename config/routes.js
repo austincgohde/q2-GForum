@@ -30,6 +30,11 @@ app.post('/resources/create', posts.addResource);
 
 app.post('/interestings/create', posts.interest);
 
+<<<<<<< HEAD
+=======
+// app.get('/interestings', posts.interesting);
+
+>>>>>>> 413dd182449583aacb87445eb92c790bb9fbd4bf
 app.get('/singlepost', posts.singlePost);
 
 //app.get('/admin', )
