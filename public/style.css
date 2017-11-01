@@ -68,6 +68,11 @@ html {
       background-size: cover;
 }
 
+.postBody {
+  background: black url("./orange8.jpeg") no-repeat center center fixed;
+      background-size: cover;
+}
+
 .navbar {
   position: fixed;
   z-index: 5;
@@ -229,6 +234,8 @@ li a {
   min-width: 40%;
   margin-top: 100px;
   border-radius: 8px;
+  text-align: center;
+
 
 }
 
@@ -274,7 +281,8 @@ li a {
   line-height: 20px;
   height: 21px;
   margin-bottom: 0;
-  margin-left: 10px
+  margin-left: 10px;
+  margin-top: 0;
 }
 
 #logoTitle {
@@ -381,6 +389,13 @@ li a {
   font-family: 'Mada', sans-serif;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+#standardBody3 {
+  font-family: 'Mada', sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 25px;
 }
 
 
@@ -585,4 +600,49 @@ btn btn-primary btn-block btn-large
   font-family: 'Mada', sans-serif;
   font-size: 15px;
   padding: 20px;
+}
+
+#inputTitle {
+  background-color: white;
+  color: black;
+  opacity: .7;
+  font-family: 'Mada', sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1PX SOLID BLACK;
+  border-radius: 10PX;
+}
+
+#submitButton {
+  box-shadow: 3px 3px 5px 2px black;
+  background-color: #62b4c2;
+  cursor: pointer;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: 'Six Caps', sans-serif;
+  font-size: 40px;
+  border: 1px solid black;
+  border-radius: 4px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property */
+  transition:.5s;
+  cursor: pointer;
+}
+
+#submitButton:hover {
+  box-shadow: 3px 3px 5px 2px black;
+  background-color: orange;
+  cursor: pointer;
+}
+
+.gForum {
+  color: #62b4c2;
+  font-family: 'Six Caps', sans-serif;
+  font-size: 35px;
 }

@@ -5,7 +5,6 @@
     <title>gForum</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="homepage.js" defer></script>
       <link rel="stylesheet" href="/style.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -41,7 +40,7 @@
   <a class = "postLinks" href = "/helps/:type/:id"><div class = "interestingsDiv">
     <% for(let i = 0; i < posts.length; i++) { %>
       <div id = "postTable2">
-      <p id = "contentTimestamp">Created aon<%= posts[i].created_at %></p>
+      <p id = "contentTimestamp">Created on<%= posts[i].created_at %></p>
       <p id = "contentTitle"><%= posts[i].title %><p>
       <p id = "contentAuthor"> by <%= posts[i].first_name %> <%= posts[i].last_name %><p>
       <p id = "content"><%= posts[i].content %><p>
@@ -51,12 +50,13 @@
     <% } %>
   </div></a>
   <div class = 'newSubmit'>
-    <p id = "logoTitle">Submit a New <%= type %> Post:</p>
+    <p id = "logoTitle"> New <%= type %> Post:</p>
   <form action="/helps" method="post" id = "newInteresting">
-      <input type="text" name="title" placeholder="Title">
-      <button type="submit" class="">Submit!</button>
+      <input type="text" name="title" placeholder="Title" id = "inputTitle">
+      <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
+      <br>
+      <button type="submit" id="submitButton">Submit!</button>
     </form>
-    <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
   </div>
 </body>
 </html>

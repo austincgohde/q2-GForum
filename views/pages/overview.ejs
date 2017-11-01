@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>gForum</title>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="homepage.js" defer></script>
       <link rel="stylesheet" href="/style.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -72,10 +71,11 @@
       <div class = 'newSubmit'>
         <p id = "logoTitle">Submit a New Interesting:</p>
       <form action="/helps" method="post" id = "newInteresting">
-          <input type="text" name="title" placeholder="Title">
-          <button type="submit" class="">Submit!</button>
+          <input type="text" name="title" placeholder="Title" id = "inputTitle">
+          <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
+          <br>
+          <button type="submit" id="submitButton">Submit!</button>
         </form>
-        <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
       </div>
       <br>
       <br>
