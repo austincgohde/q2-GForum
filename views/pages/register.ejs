@@ -17,7 +17,7 @@
   <div class = 'registerContainer'>
     <div id = "registerContent">
       <img src = "/galvanize.png" width="200px;">
-<br>
+      <br>
       <p id = "logoTitleReg">gForum</p>
       <p id = "logoSubTitle">For All Things Interesting and Helpful</p>
       <form action="/register" method="post" id = "">
@@ -25,7 +25,7 @@
         <input type="text" name="lastName" placeholder="Last Name">
         <input type="email" name="email" placeholder="Email">
         <br>
-        <select name="cohort">
+        <select name="cohort" class = "registerCohortSelect">
                   <option disabled selected>Select Cohort</option>
                  <% for(let i = 0; i < cohorts.length; i++) { %>
                    <option value="<%= cohorts[i].id %>"><%= cohorts[i].name %></option>
