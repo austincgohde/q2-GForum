@@ -9,15 +9,15 @@ const encryption = require("../config/encryption.js");
      .where('name', req.params.type)
      .select('id')
      .then((result)=>{
-       req.session.type.id = result[0].id;
+       req.session.type = result[0];
        knex('posts')
-       .select("title", 'content', 'upvote', 'downvote', 'types.name', 'users.first_name', 'users.last_name', 'comments')
+       .select("title", 'content', 'upvote', 'downvote', 'types.name', 'users.first_name', 'users.last_name')
        .join('users', 'users.id', 'posts.user_id')
        .join('types', 'types.id', 'posts.type_id')
        .where('type_id', result[0].id)
        .then((result) => {
-
-         res.render('pages/subject', {info: result} )
+         console.log(result);
+         res.render('pages/subject', {posts: result} )
        })
      })
    },
