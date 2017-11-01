@@ -18,15 +18,14 @@ const encryption = require("../config/encryption.js");
          console.log("Hi");
          req.session.type.name = req.session.type.name.replace(/_/g, " ");
        }
-
        knex('posts')
-       .select("posts.title", 'posts.content', 'posts.upvote', 'posts.downvote', 'types.name', 'users.first_name', 'users.last_name')
-       .join('users', 'users.id', 'posts.user_id')
-       .join('types', 'types.id', 'posts.type_id')
        .where('posts.type_id', req.session.type.id)
+       .select("posts.title", 'posts.content', 'posts.upvote', 'posts.downvote', 'types.name', 'users.first_name', 'users.last_name')
+       .join('users', 'posts.user_id', 'users.id')
+       .join('types', 'posts.type_id', 'types.id')
        .then((result) => {
          let posts = result;
-         console.log("Some stupid shit");
+         console.log(posts);
          for(let i = 0; i < posts.length; i++) {
            let timeFormat = String(posts[i].created_at).slice(0, 21);
            posts[i].created_at = timeFormat;
@@ -41,7 +40,7 @@ const encryption = require("../config/encryption.js");
     }).catch((err)=>{
       console.log(err);
     })
-   },
+  },
 
      createHelp: function(req, res){
        knex('posts')
