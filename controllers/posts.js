@@ -85,16 +85,16 @@ const encryption = require("../config/encryption.js");
 
 //Interestings:
 
-interesting: function(req, res){
-   knex('posts')
-   .select("title", 'content', 'upvote', 'downvote', 'type.name', 'users.first_name', 'users.last_name','comments')
-   .where("type_id", 1)
-   .join('users', 'users.id', 'posts.user_id')
-   .where('type_id', result[0].id)
-   .then((result) => {
-     res.render('/interestings', {info: result} )
-   })
-},
+// interesting: function(req, res){
+//    knex('posts')
+//    .select("title", 'content', 'upvote', 'downvote', 'type.name', 'users.first_name', 'users.last_name','comments')
+//    .where("type_id", 1)
+//    .join('users', 'users.id', 'posts.user_id')
+//    .where('type_id', result[0].id)
+//    .then((result) => {
+//      res.render('/interestings', {info: result} )
+//    })
+// },
 
 
      interest: function(req, res){
@@ -111,6 +111,6 @@ interesting: function(req, res){
           .catch((err) => {
             console.error(err)
           });
-          },
+          }
 
  };
