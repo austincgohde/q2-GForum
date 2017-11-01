@@ -153,14 +153,14 @@ module.exports = {
                       .then((result) => {
                         req.session.user.name = result[0].first_name;
                         req.session.save(() => {
-                          res.redirect("/update")
+                          res.redirect("/profile")
                         })
                       })
                   })
               } else {
                 req.session.errMsg = "Invalid information. Please try again"
                 req.session.save(() => {
-                  res.redirect("/update")
+                  res.redirect("/profile")
                 })
               }
             })
@@ -177,7 +177,7 @@ module.exports = {
         .then((result) => {
           req.session.user.name = result[0].first_name;
           req.session.save(() => {
-            res.redirect("/update")
+            res.redirect("/profile")
           })
         })
     }
