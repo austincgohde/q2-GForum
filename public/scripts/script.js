@@ -1,7 +1,7 @@
 $(document).ready(function(){
-
+// alert();
 $.get(('http://quotes.rest/qod.json?category=students'), function(data){
-  $('#quoteText').text(data.content.quotes[0].quote + ' - ' + data.content.quotes[0].author);
+  $('#quoteText').text(data.contents.quotes[0].quote + ' - ' + data.contents.quotes[0].author);
 });
 
-};
+});

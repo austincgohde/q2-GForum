@@ -113,7 +113,6 @@ const encryption = require("../config/encryption.js");
            type_id: 1
          }, '*')
          .then((result)=>{
-           res.redirect('/overview', result)
            res.redirect('/overview')
          })
           .catch((err) => {
