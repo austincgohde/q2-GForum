@@ -10,14 +10,15 @@ const encryption = require("../config/encryption.js");
      .select('id')
      .then((result)=>{
        req.session.type.id = result[0].id;
+       console.log(req.session.type.id);
        knex('posts')
-       .select("title", 'content', 'upvote', 'downvote', 'types.name', 'users.first_name', 'users.last_name', 'comments')
+       .select("title", 'content', 'upvote', 'downvote', 'types.name', 'users.first_name', 'users.last_name')
        .join('users', 'users.id', 'posts.user_id')
        .join('types', 'types.id', 'posts.type_id')
        .where('type_id', result[0].id)
        .then((result) => {
 
-         res.render('pages/subject', {info: result} )
+         res.render('pages/subject', {posts: result} )
        })
      })
    },
@@ -85,17 +86,6 @@ const encryption = require("../config/encryption.js");
 
 //Interestings:
 
-interesting: function(req, res){
-   knex('posts')
-   .select("title", 'content', 'upvote', 'downvote', 'type.name', 'users.first_name', 'users.last_name','comments')
-   .where("type_id", 1)
-   .join('users', 'users.id', 'posts.user_id')
-   .where('type_id', result[0].id)
-   .then((result) => {
-     res.render('/interestings', {info: result} )
-   })
-},
-
 
      interest: function(req, res){
        knex('posts')
@@ -106,7 +96,7 @@ interesting: function(req, res){
            type_id: 1
          }, '*')
          .then((result)=>{
-           res.redirect('/interestings/create'+result[0].id, result)
+           res.redirect('/overview', result)
          })
           .catch((err) => {
             console.error(err)
