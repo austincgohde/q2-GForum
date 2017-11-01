@@ -10,21 +10,22 @@ $.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=
   $('#techNewsDesc').text(data.articles[0].description);
   $('#Date').text(data.articles[0].publishedAt);
   $('#newsLink').append(data.articles[0].url);
-  $('#imageLink').append(data.articles[0].urlToImage);
+  $("#imageLink").attr("src", data.articles[0].urlToImage);
+
 
   $('#techNewsTitle2').text(data.articles[1].title);
   $('#techNewsAuthor2').text(data.articles[1].author);
   $('#techNewsDesc2').text(data.articles[1].description);
   $('#Date2').text(data.articles[1].publishedAt);
   $('#newsLink2').append(data.articles[1].url);
-  $('#imageLink2').append(data.articles[1].urlToImage);
+  $("#imageLink2").attr("src", data.articles[1].urlToImage);
 
   $('#techNewsTitle3').text(data.articles[2].title);
   $('#techNewsAuthor3').text(data.articles[2].author);
   $('#techNewsDesc3').text(data.articles[2].description);
   $('#Date3').text(data.articles[2].publishedAt);
   $('#newsLink3').append(data.articles[2].url);
-  $('#imageLink3').append(data.articles[2].urlToImage);
+  $("#imageLink3").attr("src", data.articles[2].urlToImage);
 });
 
 });
