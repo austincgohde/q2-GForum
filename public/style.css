@@ -63,6 +63,11 @@ html {
       background-size: cover;
 }
 
+.subjectBody {
+  background: black url("./orange5.jpeg") no-repeat center center fixed;
+      background-size: cover;
+}
+
 .navbar {
   position: fixed;
   z-index: 5;
