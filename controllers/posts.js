@@ -89,20 +89,6 @@ const encryption = require("../config/encryption.js");
          });
         },
 
-//Interestings:
-
-// interesting: function(req, res){
-//    knex('posts')
-//    .select("title", 'content', 'upvote', 'downvote', 'type.name', 'users.first_name', 'users.last_name','comments')
-//    .where("type_id", 1)
-//    .join('users', 'users.id', 'posts.user_id')
-//    .where('type_id', result[0].id)
-//    .then((result) => {
-//      res.render('/interestings', {info: result} )
-//    })
-// },
-
-
      interest: function(req, res){
        knex('posts')
          .insert({
@@ -112,6 +98,7 @@ const encryption = require("../config/encryption.js");
            type_id: 1
          }, '*')
          .then((result)=>{
+           res.redirect('/overview', result)
            res.redirect('/overview')
          })
           .catch((err) => {

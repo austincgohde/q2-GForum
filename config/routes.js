@@ -30,8 +30,6 @@ app.post('/resources/create', posts.addResource);
 
 app.post('/interestings/create', posts.interest);
 
-// app.get('/interestings', posts.interesting);
-
 app.get('/singlepost', posts.singlePost);
 
 //app.get('/admin', )
