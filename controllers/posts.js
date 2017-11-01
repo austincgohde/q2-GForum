@@ -9,18 +9,15 @@ const encryption = require("../config/encryption.js");
      knex('types')
      .where('name', req.params.type)
      .then((result) => {
-       console.log("Hello");
-       console.log(result);
 
        req.session.type = result[0];
 
        if(req.session.type.name.includes("_")) {
-         console.log("Hi");
          req.session.type.name = req.session.type.name.replace(/_/g, " ");
        }
        knex('posts')
        .where('posts.type_id', req.session.type.id)
-       .select("posts.title", 'posts.content', 'posts.upvote', 'posts.downvote', 'types.name', 'users.first_name', 'users.last_name')
+       .select("posts.id", "posts.title", 'posts.content', 'posts.upvote', 'posts.downvote', 'types.name', 'users.first_name', 'users.last_name')
        .join('users', 'posts.user_id', 'users.id')
        .join('types', 'posts.type_id', 'types.id')
        .then((result) => {
@@ -51,7 +48,7 @@ const encryption = require("../config/encryption.js");
            type_id: req.session.type.id
          }, '*')
          .then((result)=>{
-           res.redirect('/helps/'+result[0].id, result)
+           res.redirect('/helps/'+req.session.type.name)
          })
           .catch((err) => {
             console.error(err)
@@ -61,14 +58,14 @@ const encryption = require("../config/encryption.js");
    singlePost: function(req, res){
      knex('posts')
      .where('id', req.params.id)
-     .select('title', 'content', 'types.name', 'users.first_name', 'users.last_name', 'upvote', 'downvote')
+     .select('posts.title', 'posts.content', 'types.name', 'users.first_name', 'users.last_name', 'posts.upvote', 'posts.downvote')
      .join('users', 'users.id', 'posts.user_id')
      .join('types', 'types.id', 'posts.type_id')
      .then((result)=>{
        let post = result[0];
        knex('comments')
        .where('posts_id', req.params.id)
-       .select('content', 'upvote', 'downvote', 'users.first_name', 'users.last_name')
+       .select('comments.content', 'comments.upvote', 'comments.downvote', 'users.first_name', 'users.last_name')
        .join('users', 'users.id', 'comments.user_id')
      })
      .then((result)=>{

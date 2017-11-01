@@ -16,6 +16,7 @@
     "formBuilder": "^2.9.8",
     "knex": "^0.13.0",
     "migrations": "^0.1.7",
+    "morgan": "^1.9.0",
     "pg": "^7.3.0"
   },
   "devDependencies": {},

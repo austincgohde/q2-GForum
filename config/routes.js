@@ -28,7 +28,7 @@ app.post('/helps', posts.createHelp);
 
 app.get('/helps/:type', posts.getHelp);
 
-app.get('/helps/:type/:id', posts.singlePost);
+app.get('/post/:id', posts.singlePost);
 
 app.get('/resources', posts.resource);
 
