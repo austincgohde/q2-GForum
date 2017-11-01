@@ -37,8 +37,9 @@
   <p id = "logoTitle">Posts</p>
   </div>
 </div>
-<% for(let i = 0; i < posts.length; i++) { %>
-  <a class = "postLinks" href = "/helps/<%= type.name %>/<%= posts[i].id %>"><div class = "interestingsDiv">
+<div class = "interestingsDiv">
+  <% for(let i = 0; i < posts.length; i++) { %>
+  <a class = "postLinks" href = "/helps/<%= type.name %>/<%= posts[i].id %>">
       <div id = "postTable2">
       <p id = "contentTimestamp">Created on<%= posts[i].created_at %></p>
       <p id = "contentTitle"><%= posts[i].title %><p>
@@ -50,7 +51,7 @@
     <% } %>
   </div></a>
   <div class = 'newSubmit'>
-    <p id = "logoTitle"> New <%= type %> Post:</p>
+    <p id = "logoTitle"> New <%= type.name %> Post:</p>
   <form action="/helps" method="post" id = "newInteresting">
       <input type="text" name="title" placeholder="Title" id = "inputTitle">
       <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
