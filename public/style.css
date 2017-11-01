@@ -64,7 +64,7 @@ html {
 }
 
 .subjectBody {
-  background: black url("./orange5.jpeg") no-repeat center center fixed;
+  background: black url("./orange6.jpeg") no-repeat center center fixed;
       background-size: cover;
 }
 
@@ -457,7 +457,7 @@ btn btn-primary btn-block btn-large
 
 .interestingsDiv {
   padding: 5px;
-  width: 80%;
+  width: 90%;
   height: 550px;
   max-height: 550px;
   overflow-y: scroll;
@@ -552,8 +552,12 @@ btn btn-primary btn-block btn-large
   cursor: pointer;
 }
 
-.postTable2:hover {
+#postTable2:hover {
   box-shadow: 3px 3px 5px 2px black;
-  color: #62b4c2;
+  background-color: #62b4c2;
   cursor: pointer;
+}
+
+.postLinks {
+  text-decoration: none;
 }
