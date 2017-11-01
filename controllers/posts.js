@@ -9,6 +9,13 @@ const encryption = require("../config/encryption.js");
      .where('name', req.params.type)
      .then((result)=>{
        req.session.type = result[0];
+
+       if(req.session.type.name.includes("_")) {
+         req.session.type.name = req.session.type.name.replace(/_/g, " ");
+       }
+
+       console.log(req.session.type);
+
        knex('posts')
        .select("title", 'content', 'upvote', 'downvote', 'types.name', 'users.first_name', 'users.last_name')
        .join('users', 'users.id', 'posts.user_id')
@@ -22,7 +29,6 @@ const encryption = require("../config/encryption.js");
            posts[i].created_at = timeFormat;
          }
 
-         console.log(result);
          res.render('pages/subject', {posts: result, type: req.session.type.name} )
        })
      })
@@ -55,8 +61,8 @@ const encryption = require("../config/encryption.js");
        knex('comments')
        .where('posts_id', req.params.id)
        .select('content', 'upvotes', 'downvotes', 'users.first_name', 'users.last_name')
+       .join('users', 'users.id', 'comments.user_id')
      })
-     .join('users', 'users.id', 'comments.user_id')
      .then((result)=>{
        res.render('pages/post', { post: post, comments: result})
      });
