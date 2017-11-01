@@ -265,6 +265,17 @@ li a {
   margin-bottom: 0;
 }
 
+#logoTitleMain6 {
+  font-family: 'Six Caps', sans-serif;
+  font-size: 150px;
+  display: inline-block;
+  color: white;
+  line-height: 34px;
+  height: 35px;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
 #logoTitleOverview {
   font-family: 'Six Caps', sans-serif;
   font-size: 100px;
@@ -667,7 +678,7 @@ btn btn-primary btn-block btn-large
 .news {
   width: 95%;
   height: 350px;
-  color: black;
+  color: white;
   background-color: black;
   opacity: .7;
   border-radius: 10px;
@@ -706,4 +717,13 @@ btn btn-primary btn-block btn-large
 }
 .link2:active {
   color: #62b4c2;
+}
+
+.registerCohortSelect {
+  width: 80%;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  background-color: gray;
+  color: white;
 }
