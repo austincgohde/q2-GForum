@@ -106,7 +106,7 @@ interesting: function(req, res){
            type_id: 1
          }, '*')
          .then((result)=>{
-           res.redirect('/interestings/create'+result[0].id, result)
+           res.redirect('/overview')
          })
           .catch((err) => {
             console.error(err)
