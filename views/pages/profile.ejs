@@ -19,16 +19,15 @@
       <img src = "/galvanize.png" width="200px;">
       <br>
       <p id = "logoTitleReg">gForum</p>
-      <p id = "logoSubTitle">Updating Profile For:</p>
-        <h2 class = "">Name: </h2>
-        <h4 class = "">Email: </h4>
-        <h4 class = "">Cohort: </h4>
+      <br>
+        <p id = "logoTitle2">Updating <%= user.first_name %> <%= user.last_name %>'s Profile </h2>
+          <br>
       <form action="/login" method="post" id = "">
-        <input type="text" name="firstName" placeholder="First Name">
-        <input type="text" name="lastName" placeholder="Last Name">
-        <input type="email" name="email" placeholder="Email">
+        <input type="text" name="firstName" value="<%= user.first_name %>">
+        <input type="text" name="lastName" value="<%= user.last_name %>">
+        <input type="email" name="email" value="<%= user.email %>">
         <input type="password" name="password" placeholder="Password">
-        <input type="password" name="password" placeholder="Confirm Password">
+        <input type="password" placeholder="Confirm Password">
         <button type="submit" class="btn btn-primary btn-block btn-large">Update Profile!</button>
         </form>
         <br>

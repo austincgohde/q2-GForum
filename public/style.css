@@ -285,6 +285,19 @@ li a {
   z-index: 2;
 }
 
+
+#logoTitle2 {
+  font-family: 'Grand Hotel', cursive;
+  font-size: 40px;
+  display: inline-block;
+  color: black;
+  line-height: 34px;
+  height: 35px;
+  margin-top: 50px;
+  margin-bottom: 0;
+  z-index: 2;
+}
+
 #sectionTitle {
   font-family: 'Six Caps', sans-serif;
   font-size: 150px;

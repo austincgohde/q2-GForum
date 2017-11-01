@@ -93,12 +93,11 @@ module.exports = {
   },
 
   getOverview: (req, res) => {
-    knex("posts")
-      .where("type_id", 1)
-      .select("posts.title, posts.content, users.first_name, users.last_name")
-      .orderBy("created_at", "desc")
+    knex.raw(`SELECT posts.title, posts.content, users.first_name, users.last_name
+      FROM posts JOIN users ON users.id = posts.user_id WHERE posts.type_id = 1
+      ORDER BY posts.created_at DESC`)
       .then((result) => {
-        res.render("pages/overview", { interestings: result});
+        res.render("pages/overview", { interestings: result.rows, user: req.session.user.name});
       })
   },
 

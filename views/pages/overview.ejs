@@ -16,7 +16,7 @@
 <body class = "overviewBody">
   <ul class = "navbar" style="list-style: none;">
     <li><a class="active" href="/login"><b>-LOG OUT-</b></a></li>
-    <li><a class="active" href="/login"><b>-UPDATE PROFILE-</b></a></li>
+    <li><a class="active" href="/profile"><b>-UPDATE PROFILE-</b></a></li>
     <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
     <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
     <li><a class="active" href="https://members.galvanize.com/">MEMBER</a></li>
@@ -66,12 +66,11 @@
           <p id = ""><%= interestings[i].first_name %> <%= interestings[i].last_name %><h2>
           <p id = ""><%= interestings[i].content %><h1>
           </div>
-        <% } %>3
-      </div>d
+        <% } %>
+      </div>
+      <p id = "logoTitle">Submit a New Interesting:</p>
       <form action="/interestings/create" method="post" id = "newInterersting">
           <input type="text" name="title" placeholder="Title">
-          <input type="text" name="first_name" placeholder="First Name">
-          <input type="text" name="last_name" placeholder="Last Name">
           <textarea name="content" form="newInteresting">Enter text here...</textarea>
           <button type="submit" class="">Submit!</button>
         </form>
