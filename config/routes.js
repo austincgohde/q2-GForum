@@ -12,7 +12,7 @@ app.get('/register', users.getRegister);
 
 app.post('/register', users.create);
 
-app.get('/update', users.getProfile);
+app.get('/profile', users.getProfile);
 
 app.post('/update', users.updateProfile);
 
@@ -28,7 +28,7 @@ app.get('/resources', posts.resource);
 
 app.post('/resources/create', posts.addResource);
 
-//app.post('/interestings/create', posts.interest);
+app.post('/interestings/create', posts.interest);
 
 //app.get('/interestings', posts.interesting);
 
