@@ -62,7 +62,7 @@
       <div class = "interestingsDiv">
         <% for(let i = 0; i < interestings.length; i++) { %>
           <div id = "postTable">
-          <p id = "contentTimestamp">Created at </p>
+          <p id = "contentTimestamp">Created at <%= interestings[i].created_at %></p>
           <p id = "contentTitle"><%= interestings[i].title %><p>
           <p id = "contentAuthor"> by <%= interestings[i].first_name %> <%= interestings[i].last_name %><p>
           <p id = "content"><%= interestings[i].content %><p>
