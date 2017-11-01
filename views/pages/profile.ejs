@@ -35,14 +35,14 @@
       <br>
         <p id = "logoTitle2">Welcome to your profile page, <%= user.first_name %>!</h2>
           <br>
-      <form action="/login" method="post" id = "">
+      <form action="/update" method="post" id = "">
         <input type="text" name="firstName" value="<%= user.first_name %>">
         <input type="text" name="lastName" value="<%= user.last_name %>">
         <input type="email" name="email" value="<%= user.email %>">
         <input type="password" name="password" placeholder="Password">
         <input type="password" placeholder="Confirm Password">
         <button type="submit" class="btn btn-primary btn-block btn-large">Update Profile!</button>
-        </form>
+      </form>
         <br>
         <br>
     </div>
