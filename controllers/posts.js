@@ -56,21 +56,29 @@ const encryption = require("../config/encryption.js");
         },
 
    singlePost: function(req, res){
+     let searchID = req.params.id;
      knex('posts')
-     .where('id', req.params.id)
+     .where('posts.id', req.params.id)
      .select('posts.title', 'posts.content', 'types.name', 'users.first_name', 'users.last_name', 'posts.upvote', 'posts.downvote')
      .join('users', 'users.id', 'posts.user_id')
      .join('types', 'types.id', 'posts.type_id')
      .then((result)=>{
        let post = result[0];
        knex('comments')
-       .where('posts_id', req.params.id)
+       .where('comments.post_id', req.params.id)
        .select('comments.content', 'comments.upvote', 'comments.downvote', 'users.first_name', 'users.last_name')
        .join('users', 'users.id', 'comments.user_id')
+       .then((result)=>{
+         res.render('pages/post', { post: post, comments: result})
+       })
+       .catch((err) => {
+         console.log(err);
+       })
+
      })
-     .then((result)=>{
-       res.render('pages/post', { post: post, comments: result})
-     });
+     .catch((err) => {
+       console.log(err);
+     })
    },
 
 //Resources:
