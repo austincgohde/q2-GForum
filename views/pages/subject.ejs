@@ -47,15 +47,16 @@
       <p id = "content"><%= posts[i].content %><p>
       <p id = "content"><%= posts[i].upvotes %><p>
       <p id = "content"><%= posts[i].downvotes %><p>
-
       </div>
     <% } %>
   </div></a>
-  <p id = "logoTitle">Submit a New Post:</p>
+  <div class = 'newSubmit'>
+    <p id = "logoTitle">Submit a New <%= type %> Post:</p>
   <form action="/helps" method="post" id = "newInteresting">
       <input type="text" name="title" placeholder="Title">
       <button type="submit" class="">Submit!</button>
     </form>
-    <textarea name="content" form="newInteresting">Enter text here...</textarea>
+    <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
+  </div>
 </body>
 </html>
