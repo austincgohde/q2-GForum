@@ -5,33 +5,42 @@ const encryption = require("../config/encryption.js");
  module.exports = {
 
    getHelp: function(req, res){
+     console.log("SOmething shit");
      knex('types')
      .where('name', req.params.type)
-     .then((result)=>{
+     .then((result) => {
+       console.log("Hello");
+       console.log(result);
+
        req.session.type = result[0];
 
        if(req.session.type.name.includes("_")) {
+         console.log("Hi");
          req.session.type.name = req.session.type.name.replace(/_/g, " ");
        }
 
-       console.log(req.session.type);
-
        knex('posts')
-       .select("title", 'content', 'upvote', 'downvote', 'types.name', 'users.first_name', 'users.last_name')
+       .select("posts.title", 'posts.content', 'posts.upvote', 'posts.downvote', 'types.name', 'users.first_name', 'users.last_name')
        .join('users', 'users.id', 'posts.user_id')
        .join('types', 'types.id', 'posts.type_id')
-       .where('type_id', result[0].id)
+       .where('posts.type_id', req.session.type.id)
        .then((result) => {
          let posts = result;
-
+         console.log("Some stupid shit");
          for(let i = 0; i < posts.length; i++) {
            let timeFormat = String(posts[i].created_at).slice(0, 21);
            posts[i].created_at = timeFormat;
          }
+       res.render('pages/subject', {posts: posts, type: req.session.type} )
 
-         res.render('pages/subject', {posts: result, type: req.session.type.name} )
+       }).catch((err)=>{
+         console.log(err);
        })
-     })
+
+
+    }).catch((err)=>{
+      console.log(err);
+    })
    },
 
      createHelp: function(req, res){
@@ -47,20 +56,20 @@ const encryption = require("../config/encryption.js");
          })
           .catch((err) => {
             console.error(err)
-          });
-          },
+         });
+        },
 
    singlePost: function(req, res){
      knex('posts')
      .where('id', req.params.id)
-     .select('title', 'content', 'types.name', 'users.first_name', 'users.last_name', 'upvotes', 'downvotes')
+     .select('title', 'content', 'types.name', 'users.first_name', 'users.last_name', 'upvote', 'downvote')
      .join('users', 'users.id', 'posts.user_id')
      .join('types', 'types.id', 'posts.type_id')
      .then((result)=>{
        let post = result[0];
        knex('comments')
        .where('posts_id', req.params.id)
-       .select('content', 'upvotes', 'downvotes', 'users.first_name', 'users.last_name')
+       .select('content', 'upvote', 'downvote', 'users.first_name', 'users.last_name')
        .join('users', 'users.id', 'comments.user_id')
      })
      .then((result)=>{
@@ -74,7 +83,7 @@ const encryption = require("../config/encryption.js");
    resource: function(req, res){
        knex('resources')
        .then((result) => {
-         res.render('/resources', {info: result} )
+         res.render('resources', {info: result} )
        })
        .catch((err) => {
          console.error(err)

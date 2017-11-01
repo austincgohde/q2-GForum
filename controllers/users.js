@@ -92,6 +92,13 @@ module.exports = {
       })
   },
 
+  logout: (req, res) => {
+    delete req.session.user;
+    req.session.save(() => {
+      res.redirect("/");
+    })
+  },
+
   getOverview: (req, res) => {
     knex.raw(`SELECT posts.title, posts.content, users.first_name, users.last_name, posts.created_at
       FROM posts JOIN users ON users.id = posts.user_id WHERE posts.type_id = 1
@@ -142,9 +149,12 @@ module.exports = {
                         last_name: req.body.lastName,
                         email: req.body.email,
                         password: encryptedUser.password
-                      })
-                      .then(() => {
-                        res.redirect("/update")
+                      }, "*")
+                      .then((result) => {
+                        req.session.user.name = result[0].first_name;
+                        req.session.save(() => {
+                          res.redirect("/update")
+                        })
                       })
                   })
               } else {
@@ -163,9 +173,12 @@ module.exports = {
           first_name: req.body.firstName,
           last_name: req.body.lastName,
           email: req.body.email
-        })
-        .then(() => {
-          res.redirect("/update")
+        }, "*")
+        .then((result) => {
+          req.session.user.name = result[0].first_name;
+          req.session.save(() => {
+            res.redirect("/update")
+          })
         })
     }
   },
