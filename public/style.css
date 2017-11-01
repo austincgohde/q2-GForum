@@ -165,6 +165,7 @@ li a {
   margin-top: 70px;
   opacity: .9;
   border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 .currentInfo {
@@ -665,7 +666,7 @@ btn btn-primary btn-block btn-large
 
 .news {
   width: 95%;
-  height: 300px;
+  height: 350px;
   color: black;
   background-color: black;
   opacity: .7;
@@ -673,7 +674,36 @@ btn btn-primary btn-block btn-large
   border: 2px solid white;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.thanks {
+  width: 200px;
+  color: white;
+  background-color: black;
+  opacity: .7;
+  border-radius: 10px;
+  border: 2px solid white;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   margin-bottom: 30px;
+  font-family: 'Mada', sans-serif;
+  font-size: 15px;
+}
+
+.link2:visited {
+  color: #62b4c2;
+}
+.link2:hover {
+  color: #62b4c2;
+}
+.link2:focus {
+  color: #62b4c2;
+}
+.link2:active {
+  color: #62b4c2;
 }
