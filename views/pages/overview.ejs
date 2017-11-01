@@ -62,17 +62,18 @@
       <div class = "interestingsDiv">
         <% for(let i = 0; i < interestings.length; i++) { %>
           <div id = "postTable">
-          <p id = ""><%= interestings[i].title %><h1>
-          <p id = ""><%= interestings[i].first_name %> <%= interestings[i].last_name %><h2>
-          <p id = ""><%= interestings[i].content %><h1>
+          <p id = "contentTimestamp">Created at </p>
+          <p id = "contentTitle"><%= interestings[i].title %><p>
+          <p id = "contentAuthor"> by <%= interestings[i].first_name %> <%= interestings[i].last_name %><p>
+          <p id = "content"><%= interestings[i].content %><p>
           </div>
         <% } %>
       </div>
       <p id = "logoTitle">Submit a New Interesting:</p>
-      <form action="/interestings/create" method="post" id = "newInterersting">
+      <form action="/interestings/create" method="post" id = "newInteresting">
           <input type="text" name="title" placeholder="Title">
-          <textarea name="content" form="newInteresting">Enter text here...</textarea>
           <button type="submit" class="">Submit!</button>
         </form>
+        <textarea name="content" form="newInteresting">Enter text here...</textarea>
 </body>
 </html>
