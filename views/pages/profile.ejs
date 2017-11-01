@@ -14,6 +14,21 @@
       <link rel="apple-touch-icon" href="/titlepic.jpeg">
   </head>
 <body class = "profileBody">
+  <ul class = "navbar" style="list-style: none;">
+    <li><a class="active" href="/overview">HOME</a></li>
+    <li><a class="active" href="/">LOG OUT</a></li>
+    <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
+    <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
+    <li><a class="active" href="https://members.galvanize.com/">MEMBER</a></li>
+    <li><a class="active" href="https://talent.galvanize.com/">TALENT</a></li>
+    <li><a class="active" href="https://gstudents.slack.com/">SLACK</a></li>
+    <li><a class="active" href="https://github.com/">GITHUB</a></li>
+    <li><a class="active" href="https://trello.com/">TRELLO</a></li>
+  </ul>
+  <br>
+  <br>
+  <br>
+
   <div class = 'registerContainer'>
     <div id = "registerContent">
       <img src = "/galvanize.png" width="200px;">
@@ -21,7 +36,6 @@
       <p id = "logoTitleReg">gForum</p>
       <br>
         <p id = "logoTitle2">Welcome to your profile page, <%= user.first_name %>!</h2>
-          <p id = "logoTitle2">Edit the fields below to update your information.</h2>
           <br>
       <form action="/login" method="post" id = "">
         <input type="text" name="firstName" value="<%= user.first_name %>">
