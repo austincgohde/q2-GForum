@@ -4,7 +4,7 @@ $.get(('http://quotes.rest/qod.json?category=students'), function(data){
   $('#quoteText').text(data.contents.quotes[0].quote + ' - ' + data.contents.quotes[0].author);
 });
 
-$.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey={2dfc41eabdaa4c38b740b79835fcb3f2}'), function(data){
+$.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=2dfc41eabdaa4c38b740b79835fcb3f2'), function(data){
   $('#techNewsTitle').text(data.articles[0].title);
   $('#techNewsAuthor').text(data.articles[0].author);
   $('#techNewsDesc').text(data.articles[0].description);
