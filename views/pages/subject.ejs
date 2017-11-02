@@ -44,11 +44,11 @@
   <a class = "postLinks" href = "/post/<%= posts[i].id %>">
       <div id = "postTable2">
       <p id = "contentTimestamp">Created on<%= posts[i].created_at %></p>
-      <p id = "contentTitle"><%= posts[i].title %><p>
-      <p id = "contentAuthor"> by <%= posts[i].first_name %> <%= posts[i].last_name %><p>
-      <p id = "content"><%= posts[i].content %><p>
-      <p id = "content"><%= posts[i].upvote %><p>
-      <p id = "content"><%= posts[i].downvote %><p>
+      <p id = "contentTitle"><%= posts[i].title %></p>
+      <p id = "contentAuthor"> by <%= posts[i].first_name %> <%= posts[i].last_name %></p>
+      <p id = "content"><%= posts[i].content %></p>
+      <button class = "postUp">&#8593;<%= posts[i].upvote %> Upvotes</button>
+      <button class = "postDown">&#8595; <%= posts[i].downvote %> Downvotes</button>
       </div>
     <% } %>
   </div></a>

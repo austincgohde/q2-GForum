@@ -34,19 +34,21 @@
         <p id = "contentTitle"><%= post.title %><p>
         <p id = "contentAuthor"> by <%= post.first_name %> <%= post.last_name %><p>
         <p id = "content"><%= post.content %><p>
-        <p id = "content"><%= post.upvotes %><p>
-        <p id = "content"><%= post.downvotes %><p>
+          <button class = "postUp">&#8593;<%= posts[i].upvote %> Upvotes</button>
+          <button class = "postDown">&#8595; <%= posts[i].downvote %> Downvotes</button>
   </div>
   </div>
   <div class = "sectionDiv">
-  <p id = "logoTitle">Comments:</p>
+    <p id = "logoTitle">Comments:</p>
+  </div>
+  <div class = "interestingsDiv">
     <% for(let i = 0; i < comments.length; i++) { %>
       <div id = "postTable">
       <p id = "contentTimestamp">Created on<%= comments[i].created_at %></p>
       <p id = "contentAuthor"> by <%= comments[i].first_name %> <%= comments[i].last_name %><p>
       <p id = "content"><%= comments[i].content %><p>
-      <p id = "content"><%= comments[i].upvotes %><p>
-      <p id = "content"><%= comments[i].downvotes %><p>
+      <button class = "commentUp">&#8593;<%= comments[i].upvote %> Upvotes</button>
+      <button class = "commentDown">&#8595; <%= comments[i].downvote %> Downvotes</button>
       </div>
     <% } %>
   </div>

@@ -274,6 +274,7 @@ li a {
   height: 35px;
   margin-top: 50px;
   margin-bottom: 0;
+
 }
 
 #logoTitleMain {
@@ -297,7 +298,7 @@ li a {
   height: 35px;
   margin-top: 50px;
   margin-bottom: 0;
-
+text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);
 }
 
 #logoTitleOverview {
@@ -313,8 +314,7 @@ li a {
   float: right;
   margin-bottom: 10px;
   margin-right: 50px;
-  text-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58)
-}
+text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
 
 #quoteTitle {
   font-family: 'Grand Hotel', cursive;
@@ -333,7 +333,6 @@ li a {
   font-size: 55px;
   display: inline-block;
   color: #62b4c2;
-
   margin-bottom: 0;
   margin-left: 10px;
   margin-top: 0;
@@ -349,7 +348,6 @@ li a {
   margin-top: 50px;
   margin-bottom: 0;
   z-index: 2;
-  text-decoration: underline;
 }
 
 
@@ -375,6 +373,7 @@ li a {
   height: 35px;
   margin-top: 0;
   margin-bottom: 0;
+
 }
 
 .smallLogo {
@@ -548,9 +547,7 @@ btn btn-primary btn-block btn-large
   height: 550px;
   max-height: 550px;
   overflow-y: scroll;
-  margin: 20px;
   margin-left: auto;
-  margin-right: auto;
   border-radius: 10px;
   -webkit-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
   -moz-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
@@ -592,6 +589,14 @@ btn btn-primary btn-block btn-large
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 0;
+}
+
+#content2 {
+  word-break: break-all;
+  font-family: 'Mada', sans-serif;
+  margin-right: 10px;
+  float: right;
+  font-weight: bold;
 }
 
 #contentTitle {
@@ -724,7 +729,7 @@ btn btn-primary btn-block btn-large
   color: black;;
   font-family: 'Six Caps', sans-serif;
   font-size: 100px;
-  margin: 0
+  margin: 0;
 }
 
 .news {
@@ -916,4 +921,26 @@ btn btn-primary btn-block btn-large
 .subjectLogo {
   float: right;
   height: 300px;
+}
+
+.postUp .postDown .commentUp .commentDown {
+  background-color:!important  orange;
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-animation: pulsate 3s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.5;
+}
+@-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.5;
+    }
 }
