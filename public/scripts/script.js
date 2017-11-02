@@ -17,6 +17,7 @@ let postUp = (num) => {
     }
 
     $(".postUp"[index]).text(`${data.upvote}`)
+    $(".postUp"[index]).attr("onclick", "")
   })
 },
 
@@ -32,7 +33,8 @@ let postDown = (num) => {
       }
     }
 
-    $(".postUp"[index]).text(`${data.downvote}`)
+    $(".postDown"[index]).text(`${data.downvote}`)
+    $(".postDown"[index]).attr("onclick", "")
   })
 },
 
@@ -49,6 +51,7 @@ let commentUp = (num) => {
     }
 
     $(".commentUp"[index]).text(`${data.upvote}`)
+    $(".commentUp"[index]).attr("onclick", "")
   })
 },
 
@@ -65,6 +68,7 @@ let commentDown = (num) => {
     }
 
     $(".commentDown"[index]).text(`${data.downvote}`)
+    $(".commentDown"[index]).attr("onclick", "")
   })
 }
 
