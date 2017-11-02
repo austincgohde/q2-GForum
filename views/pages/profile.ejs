@@ -28,6 +28,8 @@
   <br>
   <br>
   <br>
+
+
   <div class = 'registerContainer'>
     <div id = "registerContent">
       <img src = "/gettoGalvanize-logo.svg" width="200px;">
@@ -44,13 +46,22 @@
         <input type="password" placeholder="Confirm Password">
         <button type="submit" class="btn btn-primary btn-block btn-large">Update Profile</button>
       </form>
-      <button class="delete" >Delete Profile</button>
+      <button class="delete" id="myBtn" >Delete Profile</button>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Are you sure you want to delete your profile?</p>
+            <a href = "/delete"><button class="delete" id="myBtn" >Delete Profile</button></a>
+          </div>
+        </div>
         <br>
         <br>
     </div>
   </div>
   <ul class = "footer" style="list-style: none;">
-    <li><a class="active" >2017 gForum - By g66: Charlotte-Anne Spencer | Austin Gohde | Trevor Young</li>
+    <li><a class="active" >&copy; 2017 gForum - By g66: Charlotte-Anne Spencer | Austin Gohde | Trevor Young</li>
   </ul>
 </body>
 </html>
