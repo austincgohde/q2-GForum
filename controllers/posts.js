@@ -45,7 +45,9 @@ const encryption = require("../config/encryption.js");
            title: req.body.title,
            content: req.body.content,
            user_id: req.session.user.id,
-           type_id: req.session.type.id
+           type_id: req.session.type.id,
+           upvote: 0,
+           downvote: 0
          }, '*')
          .then((result)=>{
            res.redirect('/helps/'+req.session.type.name)
@@ -147,33 +149,29 @@ const encryption = require("../config/encryption.js");
       .where('posts.id', req.params.id)
       .update({
         upvote: upvote + 1
-      })
-      .then((result)=>{
-        res.redirect('pages/post'+req.params.id)
+      }, '*')
+      .then((result) => {
+        res.json({
+            upvote: result[0].upvote,
+            downvote: result[0].downvote
+          })
       })
     },
 
-    /*
-Suggestion of how to connect to ejs:
-    <button type="button" name="button">
-                <a href="/upvote/<%=posts[i].id%>"> Upvote </a>
-              </button>
-    */
 
     downvote: function(req, res){
       knex('posts')
       .where('posts.id', req.params.id)
       .update({
         downvote: downvote + 1
+      }, '*')
+      .then((result) => {
+        res.json({
+            upvote: result[0].upvote,
+            downvote: result[0].downvote
+          })
       })
-      .then((result)=>{
-        res.redirect('pages/post'+req.params.id)
-      })
+
     },
-    /*
-Suggestion of how to connect to ejs:
-    <button type="button" name="button">
-                <a href="/downvote/<%=posts[i].id%>"> Downvote </a>
-              </button>
-    */
+
  };
