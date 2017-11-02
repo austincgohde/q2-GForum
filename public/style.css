@@ -75,7 +75,7 @@ html {
 .navbar {
   position: fixed;
   z-index: 5;
-  background: linear-gradient(to right, black , #3B3B3B);
+  background: linear-gradient(to right, black , #4f4f4f);
   overflow: !important! hidden;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -83,6 +83,21 @@ html {
   top: 0;
   margin: 0;
   height: 60px;
+  border-bottom: 2px solid black;
+}
+
+.footer {
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(to right, black , #4f4f4f);
+  overflow: !important! hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  height: 50px;
+  border-top: 2px solid black;
 }
 
 li {
@@ -298,7 +313,7 @@ li a {
   float: right;
   margin-bottom: 10px;
   margin-right: 50px;
-  text-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58) 
+  text-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58)
 }
 
 #quoteTitle {
@@ -896,4 +911,9 @@ btn btn-primary btn-block btn-large
 
 .back{
   cursor: pointer;
+}
+
+.subjectLogo {
+  float: right;
+  height: 300px;
 }
