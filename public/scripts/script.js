@@ -77,5 +77,20 @@ $.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=
   $('#newsLink3').attr("href", data.articles[2].url);
   $("#imageLink3").attr("src", data.articles[2].urlToImage);
 });
-  
+
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 });
