@@ -11,6 +11,7 @@
       <link href="https://fonts.googleapis.com/css?family=Mada|Six+Caps|Grand+Hotel" rel="stylesheet">
       <link rel="shortcut icon" href="/titlepic.jpeg">
       <link rel="apple-touch-icon" href="/titlepic.jpeg">
+
   </head>
   <ul class = "navbar" style="list-style: none;">
     <li><span class = "smallLogo">gForum</li>
@@ -34,8 +35,8 @@
         <p id = "contentTitle"><%= post.title %><p>
         <p id = "contentAuthor"> by <%= post.first_name %> <%= post.last_name %><p>
         <p id = "content"><%= post.content %><p>
-          <button class = "postUp" onclick="postUp(<%= post.id %>)">&#8593;<%= post.upvote %> Upvotes</button>
-          <button class = "postDown" onclick="postDown(<%= post.id %>)">&#8595; <%= post.downvote %> Downvotes</button>
+          <button class = "postUp" onclick="postUpFn(<%= post.id %>)">&#8593;<%= post.upvote %> Upvotes</button>
+          <button class = "postDown" onclick="postDownFn(<%= post.id %>)">&#8595; <%= post.downvote %> Downvotes</button>
   </div>
   </div>
   <div class = "sectionDiv">
@@ -47,8 +48,8 @@
       <p id = "contentTimestamp">Created on<%= comments[i].created_at %></p>
       <p id = "contentAuthor"> by <%= comments[i].first_name %> <%= comments[i].last_name %><p>
       <p id = "content"><%= comments[i].content %><p>
-      <button class = "commentUp" onclick="commentUp(<%= comments[i].id %>)">&#8593;<%= comments[i].upvote %> Upvotes</button>
-      <button class = "commentDown" onclick="commentDown(<%= comments[i].id %>)">&#8593;<%= comments[i].downvote %> Downvotes</button>
+      <button class = "commentUp" onclick="commentUpFn(<%= comments[i].id %>)">&#8593;<%= comments[i].upvote %> Upvotes</button>
+      <button class = "commentDown" onclick="commentDownFn(<%= comments[i].id %>)">&#8593;<%= comments[i].downvote %> Downvotes</button>
       </div>
     <% } %>
   </div>
@@ -73,5 +74,27 @@
   <ul class = "footer" style="list-style: none;">
     <li><a class="active" >2017 gForum - By g66: Charlotte-Anne Spencer | Austin Gohde | Trevor Young</li>
   </ul>
+
 </body>
+<script type="text/javascript">
+
+let postUpFn = (num) => {
+  $.get(("/upvote/post/"+num), (data) => {
+
+    let upTag = document.getElementsByClassName("postUp")
+    let index = 0
+
+    for(let i = 0; i < upTag.length; i++) {
+      if(upTag[i].attributes.onclick.value.includes(num)) {
+        return index = i;
+      }
+    }
+
+    console.log(index);
+    $(".postUp"[index]).text(`${data.upvote}`)
+    $(".postUp"[index]).attr("onclick", "")
+  })
+};
+
+</script>
 </html>
