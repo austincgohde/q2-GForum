@@ -36,15 +36,13 @@ app.get('/upvote/post/:id', posts.upvote);
 
 app.get('/downvote/post/:id', posts.downvote);
 
-<<<<<<< HEAD
-//app.get('/upvote/comment/:id', comments.upvote);
-
-//app.get('/downvote/comment/:id', comments.downvote);
-=======
 app.get('/upvote/comment/:id', comments.upvote);
 
 app.get('/downvote/comment/:id', comments.downvote);
->>>>>>> d4982c70a60458d7f9c88d84ed9b75bce90455bd
+
+app.get('/upvote/comment/:id', comments.upvote);
+
+app.get('/downvote/comment/:id', comments.downvote);
 
 app.get('/resources', posts.resource);
 
