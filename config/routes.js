@@ -36,7 +36,9 @@ app.post('/resources/create', posts.addResource);
 
 app.post('/interestings/create', posts.interest);
 
+app.get('/upvote/:id', posts.upvote);
 
+app.get('/downvote/:id', posts.downvote);
 
 //app.get('/admin', )
 
