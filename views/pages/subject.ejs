@@ -33,13 +33,13 @@
   <br>
   <div class = "sectionDiv">
   <p id = "logoTitleMain6">Subject: <%= type.name %></p>
-  <img class = "subjectLogo" src="/<%= type.image %>">
   </div>
   <div class = "sectionDiv">
   <p id = "logoTitle">Posts</p>
+  <div class = "line"></div>
   </div>
 </div>
-<div class = "interestingsDiv2">
+<div class = "interestingsDiv">
   <% for(let i = 0; i < posts.length; i++) { %>
   <a class = "postLinks" href = "/post/<%= posts[i].id %>">
       <div id = "postTable2">
@@ -47,13 +47,14 @@
       <p id = "contentTitle"><%= posts[i].title %></p>
       <p id = "contentAuthor"> by <%= posts[i].first_name %> <%= posts[i].last_name %></p>
       <p id = "content"><%= posts[i].content %></p>
-      <button class = "postUp" onclick="postUpFn(<%= posts[i].upvote %>)">&#8593;<%= posts[i].upvote %> Upvotes</button>
-      <button class = "postDown" onclick="postDownFn(<%= posts[i].downvote %>)">&#8595; <%= posts[i].downvote %> Downvotes</button>
+      <p id = "content"> &#8593;<%= posts[i].upvote %> Upvotes</p>
+      <p id = "content">&#8595; <%= posts[i].downvote %> Downvotes</p>
       </div>
     <% } %>
   </div></a>
   <div class = 'newSubmit'>
     <p id = "logoTitle"> New <%= type.name %> Post:</p>
+    <div class = "line"></div>
   <form action="/helps" method="post" id = "newInteresting">
       <input type="text" name="title" placeholder="Title" id = "inputTitle">
       <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
@@ -61,6 +62,14 @@
       <button type="submit" id="submitButton">Submit!</button>
     </form>
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <br>
   <br>
   <br>

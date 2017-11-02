@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="43 -677 259.03993 68" width="259.03993pt" height="68pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.5 
+    <dc:date>2017-11-02 20:24:10 +0000</dc:date>
+  </metadata>
+  <defs>
+    <font-face font-family="Avenir Next Condensed" font-size="42" panose-1="2 11 5 6 2 2 2 2 2 4" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="0" x-height="496" cap-height="708" ascent="1e3" descent="-365.9973" font-weight="500" font-stretch="condensed">
+      <font-face-src>
+        <font-face-name name="AvenirNextCondensed-Regular"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Avenir Next Condensed" font-size="26" panose-1="2 11 5 6 2 2 2 2 2 4" units-per-em="1000" underline-position="-75" underline-thickness="50" slope="0" x-height="496" cap-height="708" ascent="1e3" descent="-365.9973" font-weight="500" font-stretch="condensed">
+      <font-face-src>
+        <font-face-name name="AvenirNextCondensed-Regular"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>ghettoGspot-logo</title>
+    <rect fill="white" width="259.03993" height="68"/>
+    <g>
+      <title>Layer 1</title>
+      <text transform="translate(48 -671.5)" fill="#ff9300">
+        <tspan font-family="Avenir Next Condensed" font-size="42" font-weight="500" font-stretch="condensed" fill="#ff9300" x="54.904963" y="42" textLength="139.23">galvanize</tspan>
+      </text>
+      <text transform="translate(77 -657.5)" fill="#00b8d1">
+        <tspan font-family="Avenir Next Condensed" font-size="26" font-weight="500" font-stretch="condensed" fill="#00b8d1" x="2.342" y="26" textLength="17.316">&lt;</tspan>
+      </text>
+      <text transform="translate(241 -657.5)" fill="#00b8d1">
+        <tspan font-family="Avenir Next Condensed" font-size="26" font-weight="500" font-stretch="condensed" fill="#00b8d1" x="5.769518" y="26" textLength="17.316">&gt;</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

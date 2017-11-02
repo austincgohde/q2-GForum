@@ -96,7 +96,12 @@ html {
   overflow-y: hidden;
   width: 100%;
   bottom: 0;
-  margin: 0;
+  left: 0;
+  margin-top: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+
   height: 50px;
   border-top: 2px solid black;
 }
@@ -205,7 +210,7 @@ li a {
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  width: 90%
+  width: 90%;
 }
 
 
@@ -309,7 +314,7 @@ text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);
   color: #62b4c2;
   line-height: 34px;
   height: 35px;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-left: 60px;
   float: right;
   margin-bottom: 10px;
@@ -320,9 +325,10 @@ text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
   font-family: 'Grand Hotel', cursive;
   font-size: 55px;
   display: inline-block;
-  color: orange;
-  line-height: 20px;
-  height: 21px;
+  background: -webkit-linear-gradient(orange, #ED5A2A);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  padding: 0;
   margin-bottom: 0;
   margin-left: 10px;
   margin-top: 0;
@@ -332,7 +338,9 @@ text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
   font-family: 'Grand Hotel', cursive;
   font-size: 55px;
   display: inline-block;
-  color: #62b4c2;
+  background: -webkit-linear-gradient(#62b4c2, #335a5e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 0;
   margin-left: 10px;
   margin-top: 0;
@@ -340,14 +348,14 @@ text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
 
 #logoTitle {
   font-family: 'Grand Hotel', cursive;
-  font-size: 80px;
+  font-size: 100px;
   display: inline-block;
-  color: orange;
-  line-height: 34px;
-  height: 35px;
+  background: -webkit-linear-gradient(orange, #ED5A2A);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
   margin-top: 50px;
   margin-bottom: 0;
-  z-index: 2;
+  z-index: 50;
 }
 
 
@@ -392,7 +400,6 @@ text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
 #registerContent {
   background-color: white;
   font-family: 'Mada', sans-serif;
-  border: 2px solid black;
   text-align: center;
   padding-top: 15px;
   color: black;
@@ -497,9 +504,6 @@ text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
   font-style: italic;
   font-size: 15px;
 }
-
-
-
 
 
 .login {
@@ -697,6 +701,7 @@ btn btn-primary btn-block btn-large
 #textArea {
   color: black;
   background-color: white;
+  border: none;
   opacity: .7;
   border-radius: 10px;
   font-family: 'Mada', sans-serif;
@@ -705,6 +710,9 @@ btn btn-primary btn-block btn-large
   width: 80%;
   margin-left: 10px;
   margin-right: 10px;
+  -webkit-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  -moz-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
 }
 
 #inputTitle {
@@ -714,8 +722,10 @@ btn btn-primary btn-block btn-large
   font-family: 'Mada', sans-serif;
   font-size: 15px;
   text-decoration: none;
-  border: 1PX SOLID BLACK;
   border-radius: 10PX;
+  -webkit-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  -moz-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
 }
 
 #submitButton {
@@ -749,7 +759,7 @@ btn btn-primary btn-block btn-large
 #gForum {
   color: black;;
   font-family: 'Six Caps', sans-serif;
-  font-size: 100px;
+  font-size: 80px;
   margin: 0;
 }
 
@@ -780,6 +790,7 @@ btn btn-primary btn-block btn-large
   font-size: 20px;
   margin: 0;
   padding: 0;
+  line-height: 20px;
   -webkit-animation: pulsate 3s ease-out;
     -webkit-animation-iteration-count: infinite;
     opacity: 0.5;
@@ -1038,4 +1049,26 @@ btn btn-primary btn-block btn-large
     100% {
         opacity: 0.5;
     }
+}
+
+
+.line {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 5px solid #DD643B;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.delete {
+  background-color:red;
+  border-radius: 10px;
+  width: 80%;
+  font-family:'Mada', sans-serif;
+  font-size: 17px;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
 }
