@@ -63,7 +63,7 @@ const encryption = require("../config/encryption.js");
 
      knex('posts')
      .where('posts.id', req.params.id)
-     .select('posts.title', 'posts.content', 'types.name', 'posts.created_at', 'users.first_name', 'users.last_name', 'posts.upvote', 'posts.downvote')
+     .select('posts.id', 'posts.title', 'posts.content', 'types.name', 'posts.created_at', 'users.first_name', 'users.last_name', 'posts.upvote', 'posts.downvote')
      .join('users', 'users.id', 'posts.user_id')
      .join('types', 'types.id', 'posts.type_id')
      .then((result)=>{
@@ -147,10 +147,9 @@ const encryption = require("../config/encryption.js");
     upvote: function(req, res){
       knex('posts')
       .where('posts.id', req.params.id)
-      .update({
-        upvote: upvote + 1
-      }, '*')
+      .update("upvote", knex.raw(`upvote + 1`), '*')
       .then((result) => {
+        console.log(result);
         res.json({
             upvote: result[0].upvote,
             downvote: result[0].downvote
