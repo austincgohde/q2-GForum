@@ -6,7 +6,7 @@ module.exports = {
     knex("comments")
       .insert({
         user_id : req.session.user.id,
-        post_id:
+        post_id: 1,
         content: req.body.content
       })
   }
