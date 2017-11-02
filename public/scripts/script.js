@@ -4,24 +4,9 @@ $.get(('http://quotes.rest/qod.json?category=students'), function(data){
   $('#quoteText').text(data.contents.quotes[0].quote + ' - ' + data.contents.quotes[0].author);
 });
 
-let postUp = (num) => {
-  $.get(("/upvote/post/"+num), (data) => {
 
-    let upTag = document.getElementsByClassName("postUp")
-    let index = 0
 
-    for(let i = 0; i < upTag.length; i++) {
-      if(upTag[i].onclick.includes(num)) {
-        return index = i;
-      }
-    }
-
-    $(".postUp"[index]).text(`${data.upvote}`)
-    $(".postUp"[index]).attr("onclick", "")
-  })
-},
-
-let postDown = (num) => {
+let postDownFn = (num) => {
   $.get(("/downvote/post/"+num), (data) => {
 
     let upTag = document.getElementsByClassName("postDown")
@@ -36,7 +21,7 @@ let postDown = (num) => {
     $(".postDown"[index]).text(`${data.downvote}`)
     $(".postDown"[index]).attr("onclick", "")
   })
-},
+};
 
 let commentUp = (num) => {
   $.get(("/upvote/comment/"+num), (data) => {
@@ -53,7 +38,7 @@ let commentUp = (num) => {
     $(".commentUp"[index]).text(`${data.upvote}`)
     $(".commentUp"[index]).attr("onclick", "")
   })
-},
+};
 
 let commentDown = (num) => {
   $.get(("/downvote/comment/"+num), (data) => {
@@ -70,7 +55,7 @@ let commentDown = (num) => {
     $(".commentDown"[index]).text(`${data.downvote}`)
     $(".commentDown"[index]).attr("onclick", "")
   })
-}
+};
 
 $.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=2dfc41eabdaa4c38b740b79835fcb3f2'), function(data){
   $('#techNewsTitle').text(data.articles[0].title);
@@ -95,8 +80,5 @@ $.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=
   $("#imageLink3").attr("src", data.articles[2].urlToImage);
 });
 
-document.getElementsByClassName("postUp").addEventListener("click", (e) => {
-  console.log(e);
-})
 
 });
