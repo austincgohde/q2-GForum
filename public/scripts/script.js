@@ -4,8 +4,6 @@ $.get(('http://quotes.rest/qod.json?category=students'), function(data){
   $('#quoteText').text(data.contents.quotes[0].quote + ' - ' + data.contents.quotes[0].author);
 });
 
-
-
 let postDownFn = (num) => {
   $.get(("/downvote/post/"+num), (data) => {
 
@@ -79,6 +77,5 @@ $.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=
   $('#newsLink3').attr("href", data.articles[2].url);
   $("#imageLink3").attr("src", data.articles[2].urlToImage);
 });
-
-
+  
 });

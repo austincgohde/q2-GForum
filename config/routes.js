@@ -40,6 +40,10 @@ app.get('/upvote/comment/:id', comments.upvote);
 
 app.get('/downvote/comment/:id', comments.downvote);
 
+app.get('/upvote/comment/:id', comments.upvote);
+
+app.get('/downvote/comment/:id', comments.downvote);
+
 app.get('/resources', posts.resource);
 
 app.post('/resources/create', posts.addResource);
