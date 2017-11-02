@@ -17,14 +17,14 @@ const encryption = require("../config/encryption.js");
        }
        knex('posts')
        .where('posts.type_id', req.session.type.id)
-       .select("posts.id", "posts.title", 'posts.content', 'posts.upvote', 'posts.downvote', 'types.name', 'users.first_name', 'users.last_name')
+       .select("posts.id", "posts.title", 'posts.content', 'posts.upvote', 'posts.downvote', 'posts.created_at', 'types.name', 'users.first_name', 'users.last_name')
        .join('users', 'posts.user_id', 'users.id')
        .join('types', 'posts.type_id', 'types.id')
        .then((result) => {
          let posts = result;
          console.log(posts);
          for(let i = 0; i < posts.length; i++) {
-           let timeFormat = String(posts[i].created_at).slice(0, 21);
+           let timeFormat = String(posts[i].created_at).slice(0, 15);
            posts[i].created_at = timeFormat;
          }
        res.render('pages/subject', {posts: posts, type: req.session.type} )
@@ -57,18 +57,32 @@ const encryption = require("../config/encryption.js");
 
    singlePost: function(req, res){
      let searchID = req.params.id;
+     req.session.post = req.params.id;
+
      knex('posts')
      .where('posts.id', req.params.id)
-     .select('posts.title', 'posts.content', 'types.name', 'users.first_name', 'users.last_name', 'posts.upvote', 'posts.downvote')
+     .select('posts.title', 'posts.content', 'types.name', 'posts.created_at', 'users.first_name', 'users.last_name', 'posts.upvote', 'posts.downvote')
      .join('users', 'users.id', 'posts.user_id')
      .join('types', 'types.id', 'posts.type_id')
      .then((result)=>{
        let post = result[0];
+
+       let timeFormat = String(post.created_at).slice(0, 15);
+       post.created_at = timeFormat;
+
+
        knex('comments')
        .where('comments.post_id', req.params.id)
-       .select('comments.content', 'comments.upvote', 'comments.downvote', 'users.first_name', 'users.last_name')
+       .select('comments.content', 'comments.upvote', 'comments.downvote', 'comments.created_at', 'users.first_name', 'users.last_name')
        .join('users', 'users.id', 'comments.user_id')
        .then((result)=>{
+         let comments = result;
+
+         for(let i = 0; i < comments.length; i++) {
+           let timeFormat = String(comments[i].created_at).slice(0, 15);
+           comments[i].created_at = timeFormat;
+         }
+
          res.render('pages/post', { post: post, comments: result})
        })
        .catch((err) => {
