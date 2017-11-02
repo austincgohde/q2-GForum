@@ -30,15 +30,17 @@ app.get('/helps/:type', posts.getHelp);
 
 app.get('/post/:id', posts.singlePost);
 
+app.post("/comment/create", comments.postComment);
+
+app.get('/upvote/:id', posts.upvote);
+
+app.get('/downvote/:id', posts.downvote);
+
 app.get('/resources', posts.resource);
 
 app.post('/resources/create', posts.addResource);
 
 app.post('/interestings/create', posts.interest);
-
-app.get('/upvote/:id', posts.upvote);
-
-app.get('/downvote/:id', posts.downvote);
 
 //app.get('/admin', )
 
