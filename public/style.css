@@ -757,9 +757,9 @@ btn btn-primary btn-block btn-large
 }
 
 #gForum {
-  color: black;;
+  color: black;
   font-family: 'Six Caps', sans-serif;
-  font-size: 80px;
+  font-size: 100px;
   margin: 0;
 }
 
@@ -1054,7 +1054,7 @@ btn btn-primary btn-block btn-large
 
 .line {
     display: block;
-    height: 1px;
+    height: 1;
     border: 0;
     border-top: 5px solid #DD643B;
     margin: 1em 0;
