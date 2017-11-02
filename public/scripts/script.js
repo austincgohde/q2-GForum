@@ -4,6 +4,70 @@ $.get(('http://quotes.rest/qod.json?category=students'), function(data){
   $('#quoteText').text(data.contents.quotes[0].quote + ' - ' + data.contents.quotes[0].author);
 });
 
+let postUp = (num) => {
+  $.get(("/upvote/post/"+num), (data) => {
+
+    let upTag = document.getElementsByClassName("postUp")
+    let index = 0
+
+    for(let i = 0; i < upTag.length; i++) {
+      if(upTag[i].onclick.includes(num)) {
+        return index = i;
+      }
+    }
+
+    $(".postUp"[index]).text(`${data.upvote}`)
+  })
+},
+
+let postDown = (num) => {
+  $.get(("/downvote/post/"+num), (data) => {
+
+    let upTag = document.getElementsByClassName("postDown")
+    let index = 0
+
+    for(let i = 0; i < upTag.length; i++) {
+      if(upTag[i].onclick.includes(num)) {
+        return index = i;
+      }
+    }
+
+    $(".postUp"[index]).text(`${data.downvote}`)
+  })
+},
+
+let commentUp = (num) => {
+  $.get(("/upvote/comment/"+num), (data) => {
+
+    let upTag = document.getElementsByClassName("commentUp")
+    let index = 0
+
+    for(let i = 0; i < upTag.length; i++) {
+      if(upTag[i].onclick.includes(num)) {
+        return index = i;
+      }
+    }
+
+    $(".commentUp"[index]).text(`${data.upvote}`)
+  })
+},
+
+let commentDown = (num) => {
+  $.get(("/downvote/comment/"+num), (data) => {
+
+    let upTag = document.getElementsByClassName("commentDown")
+    let index = 0
+
+    for(let i = 0; i < upTag.length; i++) {
+      if(upTag[i].onclick.includes(num)) {
+        return index = i;
+      }
+    }
+
+    $(".commentDown"[index]).text(`${data.downvote}`)
+  })
+}
+
 $.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=2dfc41eabdaa4c38b740b79835fcb3f2'), function(data){
   $('#techNewsTitle').text(data.articles[0].title);
   $('#techNewsAuthor').text(data.articles[0].author);
