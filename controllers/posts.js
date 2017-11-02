@@ -73,7 +73,7 @@ const encryption = require("../config/encryption.js");
 
        knex('comments')
        .where('comments.post_id', req.params.id)
-       .select('comments.content', 'comments.upvote', 'comments.downvote', 'comments.created_at', 'users.first_name', 'users.last_name')
+       .select('comments.id', 'comments.content', 'comments.upvote', 'comments.downvote', 'comments.created_at', 'users.first_name', 'users.last_name')
        .join('users', 'users.id', 'comments.user_id')
        .then((result)=>{
          let comments = result;
