@@ -28,6 +28,8 @@
   <br>
   <br>
   <br>
+
+
   <div class = 'registerContainer'>
     <div id = "registerContent">
       <img src = "/gettoGalvanize-logo.svg" width="200px;">
@@ -44,7 +46,16 @@
         <input type="password" placeholder="Confirm Password">
         <button type="submit" class="btn btn-primary btn-block btn-large">Update Profile</button>
       </form>
-      <button class="delete" >Delete Profile</button>
+      <button class="delete" id="myBtn" >Delete Profile</button>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Are you sure you want to delete your profile?</p>
+            <a href = "/delete"><button class="delete" id="myBtn" >Delete Profile</button></a>
+          </div>
+        </div>
         <br>
         <br>
     </div>
