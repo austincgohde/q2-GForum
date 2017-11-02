@@ -36,9 +36,9 @@ app.get('/upvote/post/:id', posts.upvote);
 
 app.get('/downvote/post/:id', posts.downvote);
 
-//app.get('/upvote/comment/:id', comments.upvote);
+app.get('/upvote/comment/:id', comments.upvote);
 
-//app.get('/downvote/comment/:id', comments.downvote);
+app.get('/downvote/comment/:id', comments.downvote);
 
 app.get('/resources', posts.resource);
 

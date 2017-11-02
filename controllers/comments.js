@@ -20,8 +20,8 @@ module.exports = {
   },
 
   upvote: function(req, res){
-    knex('posts')
-    .where('posts.id', req.params.id)
+    knex('comments')
+    .where('comments.id', req.params.id)
     .update({
       upvote: upvote + 1
     }, '*')
@@ -34,8 +34,8 @@ module.exports = {
   },
 
   downvote: function(req, res){
-    knex('posts')
-    .where('posts.id', req.params.id)
+    knex('comments')
+    .where('comments.id', req.params.id)
     .update({
       downvote: downvote + 1
     }, '*')

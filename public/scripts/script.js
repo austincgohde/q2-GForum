@@ -95,4 +95,8 @@ $.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=
   $("#imageLink3").attr("src", data.articles[2].urlToImage);
 });
 
+document.getElementsByClassName("postUp").addEventListener("click", (e) => {
+  console.log(e);
+})
+
 });

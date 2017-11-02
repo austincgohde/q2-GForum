@@ -39,16 +39,16 @@
   <p id = "logoTitle">Posts</p>
   </div>
 </div>
-<div class = "interestingsDiv">
+<div class = "interestingsDiv2">
   <% for(let i = 0; i < posts.length; i++) { %>
   <a class = "postLinks" href = "/post/<%= posts[i].id %>">
       <div id = "postTable2">
       <p id = "contentTimestamp">Created on<%= posts[i].created_at %></p>
-      <p id = "contentTitle"><%= posts[i].title %><p>
-      <p id = "contentAuthor"> by <%= posts[i].first_name %> <%= posts[i].last_name %><p>
-      <p id = "content"><%= posts[i].content %><p>
-      <p id = "content"><%= posts[i].upvote %><p>
-      <p id = "content"><%= posts[i].downvote %><p>
+      <p id = "contentTitle"><%= posts[i].title %></p>
+      <p id = "contentAuthor"> by <%= posts[i].first_name %> <%= posts[i].last_name %></p>
+      <p id = "content"><%= posts[i].content %></p>
+      <button class = "postUp" onclick="postUp(<%= posts[i].upvote %>)">&#8593;<%= posts[i].upvote %> Upvotes</button>
+      <button class = "postDown" onclick="postDown(<%= posts[i].downvote %>)">&#8595; <%= posts[i].downvote %> Downvotes</button>
       </div>
     <% } %>
   </div></a>
@@ -61,6 +61,16 @@
       <button type="submit" id="submitButton">Submit!</button>
     </form>
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <ul class = "footer" style="list-style: none;">
     <li><a class="active" >2017 gForum - By g66: Charlotte-Anne Spencer | Austin Gohde | Trevor Young</li>
   </ul>
