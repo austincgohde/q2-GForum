@@ -10,6 +10,10 @@ $.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=
   $('#techNewsDesc').text(data.articles[0].description);
   $('#Date').text(data.articles[0].publishedAt);
   $('#newsLink').attr("href", data.articles[0].url);
+<<<<<<< HEAD
+=======
+  $('#newsLink').text("Read More!");
+>>>>>>> e56c5203ae76ff5acd8bed3f4a94e7cf4cbbf369
   $("#imageLink").attr("src", data.articles[0].urlToImage);
 
   $('#techNewsTitle2').text(data.articles[1].title);
@@ -17,6 +21,10 @@ $.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=
   $('#techNewsDesc2').text(data.articles[1].description);
   $('#Date2').text(data.articles[1].publishedAt);
   $('#newsLink2').attr("href", data.articles[1].url);
+<<<<<<< HEAD
+=======
+  $('#newsLink2').text("Read More!");
+>>>>>>> e56c5203ae76ff5acd8bed3f4a94e7cf4cbbf369
   $("#imageLink2").attr("src", data.articles[1].urlToImage);
 
   $('#techNewsTitle3').text(data.articles[2].title);
@@ -24,6 +32,10 @@ $.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=
   $('#techNewsDesc3').text(data.articles[2].description);
   $('#Date3').text(data.articles[2].publishedAt);
   $('#newsLink3').attr("href", data.articles[2].url);
+<<<<<<< HEAD
+=======
+  $('#newsLink3').text("Read More!");
+>>>>>>> e56c5203ae76ff5acd8bed3f4a94e7cf4cbbf369
   $("#imageLink3").attr("src", data.articles[2].urlToImage);
 });
 
