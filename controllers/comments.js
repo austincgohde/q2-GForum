@@ -17,5 +17,34 @@ module.exports = {
       .catch((err) => {
         console.error(err);
       })
+  },
+
+  upvote: function(req, res){
+    knex('posts')
+    .where('posts.id', req.params.id)
+    .update({
+      upvote: upvote + 1
+    }, '*')
+    .then((result)=>{
+      res.json({
+        upvote: result[0].upvote,
+        downvote: result[0].downvote
+      })
+    })
+  },
+
+  downvote: function(req, res){
+    knex('posts')
+    .where('posts.id', req.params.id)
+    .update({
+      downvote: downvote + 1
+    }, '*')
+    .then((result)=>{
+      res.json({
+        upvote: result[0].upvote,
+        downvote: result[0].downvote
+      })
+    })
   }
+
 };
