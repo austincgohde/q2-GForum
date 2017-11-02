@@ -47,7 +47,6 @@ html {
       background-size: cover;
 }
 
-
 .overviewBody {
   background: black url("./orange2.jpeg") no-repeat center center fixed;
       background-size: cover;
@@ -76,12 +75,14 @@ html {
 .navbar {
   position: fixed;
   z-index: 5;
-  background-color: black;
-  opacity: .7;
-  border: 2px solid white;
-  border-radius: 10px;
-  margin-left: 45px;
-  padding-right: 50px;
+  background: linear-gradient(to right, black , #3B3B3B);
+  overflow: !important! hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  top: 0;
+  margin: 0;
+  height: 60px;
 }
 
 li {
@@ -186,60 +187,66 @@ li a {
   text-align: center;
   margin-top: 30px;
   text-align: left;
-  padding-left: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%
 }
 
 
 #logInContent {
   background-color: white;
-  border: 10px solid white;
   font-family: 'Mada', sans-serif;
-  border: 2px solid black;
   text-align: center;
   opacity: .7;
   padding-top: 15px;
+  margin-top: 40px;
   width: 28%;
-  margin-right: 20px;
-  margin-top: 20px;
+  margin-right: 25px;
   min-width: 400px;
   border-radius: 8px;
   -o-transition:.5s;
   -ms-transition:.5s;
   -moz-transition:.5s;
   -webkit-transition:.5s;
-  /* ...and now for the proper property */
   transition:.5s;
+  -webkit-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  -moz-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
 }
 
 #logInContent:hover {
   background-color: black;
-  border: 10px solid white;
   font-family: 'Mada', sans-serif;
-  border: 2px solid black;
   text-align: center;
   padding-top: 15px;
   width: 28%;
+  margin-top: 40px;
   min-width: 400px;
   border-radius: 8px;
   color: white;
+  margin-right: 18px;
+  -webkit-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  -moz-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
 }
 
 #aboutContent {
   background-color: white;
-  border: 10px solid white;
   font-family: 'Mada', sans-serif;
-  border: 2px solid black;
   text-align: left;
   opacity: .7;
   padding-top: 15px;
-  width: 64%;
-  overflow-y: scroll;
+  width: 900px;
   min-width: 900px;
-  margin-top: 100px;
+  overflow-y: scroll;
+  margin-top: 40px;
   border-radius: 8px;
   margin-left: 25px;
   text-align: center;
-
+  height: 530px;
+  -webkit-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  -moz-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
 
 }
 
@@ -263,6 +270,7 @@ li a {
   height: 35px;
   margin-top: 50px;
   margin-bottom: 0;
+
 }
 
 #logoTitleMain6 {
@@ -274,11 +282,12 @@ li a {
   height: 35px;
   margin-top: 50px;
   margin-bottom: 0;
+
 }
 
 #logoTitleOverview {
   font-family: 'Six Caps', sans-serif;
-  font-size: 100px;
+  font-size: 150px;
   display: inline-block;
   color: #62b4c2;
   line-height: 34px;
@@ -286,6 +295,10 @@ li a {
   margin-top: 50px;
   margin-bottom: 0;
   margin-left: 60px;
+  float: right;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  text-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58) 
 }
 
 #quoteTitle {
@@ -321,6 +334,7 @@ li a {
   margin-top: 50px;
   margin-bottom: 0;
   z-index: 2;
+  text-decoration: underline;
 }
 
 
@@ -346,6 +360,13 @@ li a {
   height: 35px;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.smallLogo {
+  font-family: 'Six Caps', sans-serif;
+  font-size: 40px;
+  color: #62b4c2;
+  padding-top: 10px;
 }
 
 #logoSubTitle {
@@ -421,7 +442,15 @@ li a {
   font-family: 'Mada', sans-serif;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 25px;
+  font-size: 20px;
+}
+
+#standardBody4 {
+  font-family: 'Mada', sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 50px;
+  padding: 0
 }
 
 
@@ -444,7 +473,7 @@ li a {
   padding-right: 10px;
   font-weight: bold;
   font-style: italic;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 
@@ -507,9 +536,10 @@ btn btn-primary btn-block btn-large
   margin: 20px;
   margin-left: auto;
   margin-right: auto;
-  border: 5px solid #62b4c2;
   border-radius: 10px;
-
+  -webkit-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  -moz-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
 }
 
 
@@ -517,13 +547,15 @@ btn btn-primary btn-block btn-large
   padding: 5px;
   width: 100%;
   height: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   color: black;
   background-color: white;
   opacity: .7;
   border-radius: 6px;
-  overflow-y: scroll;
+  -webkit-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  -moz-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
 }
 
 .link:visited {
@@ -629,6 +661,9 @@ btn btn-primary btn-block btn-large
   font-family: 'Mada', sans-serif;
   font-size: 15px;
   padding: 20px;
+  width: 80%;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #inputTitle {
@@ -651,8 +686,8 @@ btn btn-primary btn-block btn-large
   margin-bottom: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
-  font-family: 'Six Caps', sans-serif;
-  font-size: 40px;
+  font-family: 'Mada', sans-serif;
+  font-size: 20px;
   border: 1px solid black;
   border-radius: 4px;
   -o-transition:.5s;
@@ -670,27 +705,55 @@ btn btn-primary btn-block btn-large
   cursor: pointer;
 }
 
-.gForum {
-  color: #62b4c2;
+#gForum {
+  color: black;;
   font-family: 'Six Caps', sans-serif;
-  font-size: 35px;
+  font-size: 100px;
+  margin: 0
 }
 
 .news {
   width: 95%;
-  height: 350px;
+  height: 425px;
+  overflow-y: hidden;
   color: white;
   background-color: black;
   opacity: .7;
   border-radius: 10px;
-  border: 2px solid white;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
+  margin-top: 50px;
   text-align: center;
   margin-bottom: 10px;
+  -webkit-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  -moz-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+  box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
 }
 
+.imageLink2 {
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.please {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  -webkit-animation: pulsate 3s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.5;
+}
+@-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
 
 .thanks {
   width: 200px;
@@ -698,7 +761,6 @@ btn btn-primary btn-block btn-large
   background-color: black;
   opacity: .7;
   border-radius: 10px;
-  border: 2px solid white;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -727,4 +789,111 @@ btn btn-primary btn-block btn-large
   margin-bottom: 10px;
   background-color: gray;
   color: white;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+
+#techNewsTitle {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+
+#techNewsAuthor {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+#techNewsDesc {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+#newsLink {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+
+#techNewsTitle2 {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+
+#techNewsAuthor2 {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+#techNewsDesc2 {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+#newsLink2 {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+
+#techNewsTitle3 {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+
+#techNewsAuthor3 {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+#techNewsDesc3 {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+#newsLink3 {
+  font-family: !important 'Mada', sans-serif;
+  font-size: !important 15px;
+}
+
+
+.front{
+  cursor: pointer;
+}
+
+.back{
+  cursor: pointer;
 }

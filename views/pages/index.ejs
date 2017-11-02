@@ -12,8 +12,10 @@ w<!DOCTYPE html>
       <link href="https://fonts.googleapis.com/css?family=Mada|Six+Caps|Grand+Hotel" rel="stylesheet">
       <link rel="shortcut icon" href="/titlepic.jpeg">
       <link rel="apple-touch-icon" href="/titlepic.jpeg">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
 <ul class = "navbar" style="list-style: none;">
+  <li><span class = "smallLogo">gForum</li>
   <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
   <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
   <li><a class="active" href="https://members.galvanize.com/">MEMBER</a></li>
@@ -25,7 +27,10 @@ w<!DOCTYPE html>
 <body class = "homepageBody">
   <div class = 'container'>
     <div id = "aboutContent">
-      <p id = "standardBody3">Welcome to <span class = "gForum">gForum!</span> This is a place to connect with the Galvanize community to share helps and interestings. Please log in or register to get started. Galvanize is a collection of modern, urban campuses where people can access the skills and network they need in-person or online to level up in tech. Our culture is shaped by first-time entrepreneurs and growing startups, to Fortune 1000 companies.</p>
+      <p id = "gForum">Welcome to gForum!</p>
+      <p id = "standardBody3">This is a space to connect with your Galvanize cohort to share helps and interestings in a more organized, useful way.<BR>All <b>websites</b>, <b>docs</b>, <b>cheat-sheets</b>, <b>references</b>, and <b>tutorials</b> - all organized by the units taught in your immersive web development program.</p>
+        <p class = 'please'><i>Please <b>log in</b> or <b><span href = "">register</span></b> to get started!</i><br></p>
+      <br>
       <br>
       <p id = "quoteTitle"> Growth Mindset - Quote of the Day:</p>
       <p id = "quoteText"></p>
@@ -49,21 +54,58 @@ w<!DOCTYPE html>
     </div>
   <div class = "news">
     <p id = "quoteTitle2"> Today's Tech News:</p>
-
-    <p id = 'techNewsTitle'></p>
-    <p id = 'techNewsAuthor'></p>
-    <p id = 'techNewsDesc'></p>
-    <p id = 'date'></p>
-    <p id = 'newsLink'></p>
-    <img id = "imageLink" height = "100px">
-
-
-
-    <!-- <ul class="flex-container"> -->
-        <!-- <a href = "/helps/HTML"><li class="flex-item"><img src="../html.png" height = "150px"alt="HTML" title="HTML"></li></a>
-        <a href = "/helps/CSS"><li class="flex-item"><img src="../css.png" height = "150px"alt="CSS" title = "CSS"></li></a>
-        <a href = "/helps/JS"><li class="flex-item"><img src="../js.png" height = "140px"alt="JS" title = "Javascript"></li></a> -->
-    </div>
+    <div>
+    <ul class="flex-container">
+        <li class="flex-item2">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            	<div class="flipper">
+            		<div class="front">
+                  <p id = 'techNewsTitle'></p>
+                  <img id = "imageLink" height = "200px">
+            		</div>
+            		<div class="back">
+                  <p id = 'techNewsAuthor'></p>
+                  <p id = 'techNewsDesc'></p>
+                  <p id = "standardBody">Read More!</p>
+                  <a href = "#newsLink"><p id = 'newsLink'></p></a>
+                </div>
+            	</div>
+            </div>
+          </li>
+          <li class="flex-item2">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                  <div class="front">
+                    <p id = 'techNewsTitle2'></p>
+                    <img id = "imageLink2" height = "200px">
+                  </div>
+                  <div class="back">
+                    <p id = 'techNewsAuthor2'></p>
+                    <p id = 'techNewsDesc2'></p>
+                    <p id = "standardBody">Read More!</p>
+                    <a href = "#newsLink2"><p id = 'newsLink2'></p></a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="flex-item2">
+              <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                  <div class="flipper">
+                    <div class="front">
+                      <p id = 'techNewsTitle3'></p>
+                      <img id = "imageLink3" height = "200px">
+                    </div>
+                    <div class="back">
+                      <p id = 'techNewsAuthor3'></p>
+                      <p id = 'techNewsDesc3'></p>
+                      <p id = "standardBody">Read More!</p>
+                      <a href = "#newsLink3"><p id = 'newsLink3'></p></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+  </div>
+  </div>
   <div class = "thanks">
   <p>Powered by <a href = "https://newsapi.org/" class = "link2">NewsAPI.org</a></p>
 </div>
