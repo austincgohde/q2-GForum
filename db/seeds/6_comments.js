@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('comments').insert([
-        {user_id: 1, post_id: 1, content: "cool website!", upvote: 1, downvote: 1}
+        {user_id: 1, post_id: 1, content: "cool website!", upvote: 0, downvote: 0}
       ]);
     });
 };

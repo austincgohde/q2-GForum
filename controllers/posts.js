@@ -45,7 +45,9 @@ const encryption = require("../config/encryption.js");
            title: req.body.title,
            content: req.body.content,
            user_id: req.session.user.id,
-           type_id: req.session.type.id
+           type_id: req.session.type.id,
+           upvote: 0,
+           downvote: 0
          }, '*')
          .then((result)=>{
            res.redirect('/helps/'+req.session.type.name)
@@ -149,7 +151,7 @@ const encryption = require("../config/encryption.js");
         upvote: upvote + 1
       })
       .then((result)=>{
-        res.redirect('pages/post'+req.params.id)
+        res.redirect('/post/'+req.params.id)
       })
     },
 
@@ -167,7 +169,7 @@ Suggestion of how to connect to ejs:
         downvote: downvote + 1
       })
       .then((result)=>{
-        res.redirect('pages/post'+req.params.id)
+        res.redirect('/post/'+req.params.id)
       })
     },
     /*
