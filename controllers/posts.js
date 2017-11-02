@@ -122,6 +122,44 @@ const encryption = require("../config/encryption.js");
           .catch((err) => {
             console.error(err)
           });
-          }
+        },
 
+//votes:
+
+//update upvotes and downvotes to display on individual post pages.
+
+    upvote: function(req, res){
+      knex('posts')
+      .where('posts.id', req.params.id)
+      .update({
+        upvote: upvote + 1
+      })
+      .then((result)=>{
+        res.redirect('pages/post'+req.params.id)
+      })
+    },
+
+    /*
+Suggestion of how to connect to ejs:
+    <button type="button" name="button">
+                <a href="/upvote/<%=posts[i].id%>"> Upvote </a>
+              </button>
+    */
+
+    downvote: function(req, res){
+      knex('posts')
+      .where('posts.id', req.params.id)
+      .update({
+        downvote: downvote + 1
+      })
+      .then((result)=>{
+        res.redirect('pages/post'+req.params.id)
+      })
+    },
+    /*
+Suggestion of how to connect to ejs:
+    <button type="button" name="button">
+                <a href="/downvote/<%=posts[i].id%>"> Downvote </a>
+              </button>
+    */
  };
