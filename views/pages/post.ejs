@@ -51,7 +51,7 @@
       <p id = "contentAuthor"> by <%= comments[i].first_name %> <%= comments[i].last_name %><p>
       <p id = "content"><%= comments[i].content %><p>
       <button class = "commentUp" onclick="commentUpFn(<%= comments[i].id %>)">&#8593;<%= comments[i].upvote %> Upvotes</button>
-      <button class = "commentDown" onclick="commentDownFn(<%= comments[i].id %>)">&#8593;<%= comments[i].downvote %> Downvotes</button>
+      <button class = "commentDown" onclick="commentDownFn(<%= comments[i].id %>)">&#8595;<%= comments[i].downvote %> Downvotes</button>
       </div>
     <% } %>
   </div>
@@ -89,19 +89,65 @@
 
 let postUpFn = (num) => {
   $.get(("/upvote/post/"+num), (data) => {
-
-    let upTag = document.getElementsByClassName("postUp")
-    let index = 0
+    console.log(data);
+    let upTag = document.getElementsByClassName("postUp");
 
     for(let i = 0; i < upTag.length; i++) {
+      console.log("hello");
       if(upTag[i].attributes.onclick.value.includes(num)) {
-        return index = i;
+        upTag[i].innerHTML = "&#8593;" + data[0].upvote + " Upvotes";
+        upTag[i].attributes.onclick.value = "";
+        return
       }
     }
+  })
+};
 
-    console.log(index);
-    $(".postUp"[index]).text(`${data.upvote}`)
-    $(".postUp"[index]).attr("onclick", "")
+let postDownFn = (num) => {
+  $.get(("/downvote/post/"+num), (data) => {
+    console.log(data);
+    let downTag = document.getElementsByClassName("postDown");
+
+    for(let i = 0; i < downTag.length; i++) {
+      console.log("hello");
+      if(downTag[i].attributes.onclick.value.includes(num)) {
+        downTag[i].innerHTML = "&#8595;" + data[0].downvote + " Downvotes";
+        downTag[i].attributes.onclick.value = "";
+        return
+      }
+    }
+  })
+};
+
+let commentUpFn = (num) => {
+  $.get(("/upvote/comment/"+num), (data) => {
+    console.log(data);
+    let upTag = document.getElementsByClassName("commentUp");
+
+    for(let i = 0; i < upTag.length; i++) {
+      console.log("hello");
+      if(upTag[i].attributes.onclick.value.includes(num)) {
+        upTag[i].innerHTML = "&#8593;" + data[0].upvote + " Upvotes";
+        upTag[i].attributes.onclick.value = "";
+        return
+      }
+    }
+  })
+};
+
+let commentDownFn = (num) => {
+  $.get(("/downvote/comment/"+num), (data) => {
+    console.log(data);
+    let downTag = document.getElementsByClassName("commentDown");
+
+    for(let i = 0; i < downTag.length; i++) {
+      console.log("hello");
+      if(downTag[i].attributes.onclick.value.includes(num)) {
+        downTag[i].innerHTML = "&#8595;" + data[0].downvote + " Downvotes";
+        downTag[i].attributes.onclick.value = "";
+        return
+      }
+    }
   })
 };
 
