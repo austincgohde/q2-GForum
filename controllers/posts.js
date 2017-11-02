@@ -12,9 +12,6 @@ const encryption = require("../config/encryption.js");
 
        req.session.type = result[0];
 
-       if(req.session.type.name.includes("_")) {
-         req.session.type.name = req.session.type.name.replace(/_/g, " ");
-       }
        knex('posts')
        .where('posts.type_id', req.session.type.id)
        .select("posts.id", "posts.title", 'posts.content', 'posts.upvote', 'posts.downvote', 'posts.created_at', 'types.name', 'users.first_name', 'users.last_name')
@@ -150,10 +147,7 @@ const encryption = require("../config/encryption.js");
       .update("upvote", knex.raw(`upvote + 1`), '*')
       .then((result) => {
         console.log(result);
-        res.json({
-            upvote: result[0].upvote,
-            downvote: result[0].downvote
-          })
+        res.json(result)
       })
     },
 
@@ -161,14 +155,9 @@ const encryption = require("../config/encryption.js");
     downvote: function(req, res){
       knex('posts')
       .where('posts.id', req.params.id)
-      .update({
-        downvote: downvote + 1
-      }, '*')
+      .update("downvote", knex.raw(`downvote + 1`), '*')
       .then((result) => {
-        res.json({
-            upvote: result[0].upvote,
-            downvote: result[0].downvote
-          })
+        res.json(result)
       })
 
     },

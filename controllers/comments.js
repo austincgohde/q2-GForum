@@ -22,28 +22,18 @@ module.exports = {
   upvote: function(req, res){
     knex('comments')
     .where('comments.id', req.params.id)
-    .update({
-      upvote: upvote + 1
-    }, '*')
+    .update("upvote", knex.raw(`upvote + 1`), '*')
     .then((result)=>{
-      res.json({
-        upvote: result[0].upvote,
-        downvote: result[0].downvote
-      })
+      res.json(result)
     })
   },
 
   downvote: function(req, res){
     knex('comments')
     .where('comments.id', req.params.id)
-    .update({
-      downvote: downvote + 1
-    }, '*')
+    .update("downvote", knex.raw(`downvote + 1`), '*')
     .then((result)=>{
-      res.json({
-        upvote: result[0].upvote,
-        downvote: result[0].downvote
-      })
+      res.json(result)
     })
   }
 
