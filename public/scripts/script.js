@@ -4,23 +4,7 @@ $.get(('http://quotes.rest/qod.json?category=students'), function(data){
   $('#quoteText').text(data.contents.quotes[0].quote + ' - ' + data.contents.quotes[0].author);
 });
 
-let postUp = (num) => {
-  $.get(("/upvote/post/"+num), (data) => {
-    let upTag = document.getElementsByClassName("postUp")
-    let index = 0
-
-    for(let i = 0; i < upTag.length; i++) {
-      if(upTag[i].onclick.includes(num)) {
-        return index = i;
-      }
-    }
-
-    $(".postUp"[index]).text(`${data.upvote}`)
-    $(".postUp"[index]).attr("onclick", "")
-  })
-};
-
-let postDown = (num) => {
+let postDownFn = (num) => {
   $.get(("/downvote/post/"+num), (data) => {
 
     let upTag = document.getElementsByClassName("postDown")
@@ -93,5 +77,5 @@ $.get((' https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=
   $('#newsLink3').attr("href", data.articles[2].url);
   $("#imageLink3").attr("src", data.articles[2].urlToImage);
 });
-
+  
 });
