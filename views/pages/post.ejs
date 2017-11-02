@@ -13,6 +13,7 @@
       <link rel="apple-touch-icon" href="/titlepic.jpeg">
   </head>
   <ul class = "navbar" style="list-style: none;">
+    <li><span class = "smallLogo">gForum</li>
     <li><a class="active" href="/overview">HOME</a></li>
     <li><a class="active" href="/logout">LOG OUT</a></li>
     <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
@@ -23,10 +24,12 @@
     <li><a class="active" href="https://github.com/">GITHUB</a></li>
     <li><a class="active" href="https://trello.com/">TRELLO</a></li>
   </ul>
+  <br>
+  <br>
   <body class = "postBody">
   <div class = "sectionDiv">
     <p id = "logoTitle">Post:</p>
-    <div id = "postTable2">
+    <div id = "postTable">
         <p id = "contentTimestamp">Created on<%= post.created_at %></p>
         <p id = "contentTitle"><%= post.title %><p>
         <p id = "contentAuthor"> by <%= post.first_name %> <%= post.last_name %><p>
@@ -36,9 +39,9 @@
   </div>
   </div>
   <div class = "sectionDiv">
-  <p id = "logoTitle">Comments:v">
+  <p id = "logoTitle">Comments:</p>
     <% for(let i = 0; i < comments.length; i++) { %>
-      <div id = "postTable2">
+      <div id = "postTable">
       <p id = "contentTimestamp">Created on<%= comments[i].created_at %></p>
       <p id = "contentAuthor"> by <%= comments[i].first_name %> <%= comments[i].last_name %><p>
       <p id = "content"><%= comments[i].content %><p>

@@ -13,6 +13,7 @@
   </head>
 <body class = "profileBody">
   <ul class = "navbar" style="list-style: none;">
+    <li><span class = "smallLogo">gForum</li>
     <li><a class="active" href="/overview">HOME</a></li>
     <li><a class="active" href="/logout">LOG OUT</a></li>
     <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
@@ -32,7 +33,7 @@
       <br>
       <p id = "logoTitleReg">gForum</p>
       <br>
-        <p id = "logoTitle2">Welcome to your profile page, <%= user.first_name %>!</h2>
+        <p id = "logoTitle2"><%= user.first_name %>'s Profile</h2>
           <br>
       <form action="/update" method="post" id = "">
         <input type="text" name="firstName" value="<%= user.first_name %>">
