@@ -31,6 +31,8 @@ module.exports = {
         encryption.check(user, req.body)
           .then((isValid) => {
             if(isValid) {
+              req.session.errMsg = "";
+
               req.session.user = {
                 id: user.id,
                 name: user.first_name,
