@@ -11,6 +11,8 @@ const encryption = require("../config/encryption.js");
      .then((result) => {
 
        req.session.type = result[0];
+       req.session.type.name = req.session.type.name.replace(/_/g, " ");
+
 
        knex('posts')
        .where('posts.type_id', req.session.type.id)
