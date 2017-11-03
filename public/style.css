@@ -349,12 +349,14 @@ li a {
   color: #62b4c2;
   margin-top: 50px;
   margin-bottom: 0;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
 }
 
 #logoTitle1Million {
   font-family: 'Grand Hotel', cursive;
   font-size: 100px;
-  color: black;
+  color: orange;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
   margin-top: 20px;
   margin-left: 50px;
   margin-bottom: 0;
@@ -363,6 +365,7 @@ li a {
 
 #logoTitle1Million1 {
   font-family: 'Six Caps', sans-serif;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
   font-size: 150px;
   color: black;
   margin-top: 0px;
