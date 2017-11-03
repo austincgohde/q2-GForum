@@ -47,7 +47,17 @@ w<!DOCTYPE html>
       <form action="/login" method="post" id = "">
         	<input type="email" name="email" placeholder="Email">
           <input type="password" name="password" placeholder="Password">
+          <% if (errMsg !== "") {%>
+          <div class="message">
+          <%= errMsg %>
+          </div>
+          <% } %>
           <button type="submit" class="btn btn-primary btn-block btn-large">Let me in!</button>
+          <% if (delMsg !== "") {%>
+          <div class="message">
+          <%= delMsg %>
+          </div>
+          <% } %>
         </form>
         <p id = "standardBody">Not a Member? <a href = "/register" class = "link"><b>Sign Up</b></a></p>
     </div>

@@ -12,7 +12,7 @@ exports.up = function(knex, Promise) {
       .inTable("posts")
       .onDelete("CASCADE")
       .index();
-    table.string("content");
+    table.text("content");
     table.integer("upvote");
     table.integer("downvote")
     table.timestamps(true,true);

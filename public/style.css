@@ -1150,6 +1150,9 @@ btn btn-primary btn-block btn-large
 
 .message {
   border: 2px solid orange;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
   align-items: center;
   align-self: center;
   align-content: center;
@@ -1159,6 +1162,7 @@ btn btn-primary btn-block btn-large
   text-align: center;
   width: 200px;
   border-radius: 10px;
+  z-index: 303030303;
   padding: 10px;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
    -moz-animation: fadein 2s; /* Firefox < 16 */
