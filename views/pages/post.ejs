@@ -59,7 +59,7 @@
     <p id = "logoTitle"> New Comment:</p>
     <div class = "line"></div>
   <form action="/comment/create" method="post" id = "newInteresting">
-      <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter comment here"></textarea>
+      <textarea id = "textArea" maxlength="2000" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter comment here"></textarea>
       <br>
       <button type="submit" id="submitButton">Submit!</button>
     </form>

@@ -26,27 +26,7 @@
     <li><a class="active" href="https://github.com/">GITHUB</a></li>
     <li><a class="active" href="https://trello.com/">TRELLO</a></li>
     <li><a class="active" href="https://trello.com/">TRELLO</a></li>
-    <select>
-      <option value="" disabled selected>Select Subject</option>
-      <option><a href = "/helps/HTML">HTML</a></option>
-      <option><a href = "/helps/CSS">CSS</a></option>
-      <option><a href = "/helps/JS">Javascript</li></a></option>
-      <option><a href = "/helps/jQuery_&_DOM">jQuery & the DOM</a></option>
-      <option><a href = "/helps/Ajax_&_HTTP">AJAX </li></a></option>
-      <option><a href = "/helps/Node">Node JS</li></a></option>
-      <option><a href = "/helps/Express">Express JS</li></a></option>
-      <option><a href = "/helps/Knex">Knex</li></a></option>
-      <option><a href = "/helps/React">React</li></a></option>
-      <option><a href = "/helps/Redux">Redux</li></a></option>
-      <option><a href = "/helps/Angular">Angular</li></a></option>
-      <option><a href = "/helps/Vue">Vue</li></a></option>
-      <option><a href = "/helps/Java">Java</li></a></option>
-      <option><a href = "/helps/C%23">C#</li></a></option>
-      <option><a href = "/helps/.Net">.Net</li></a></option>
-      <option><a href = "/helps/Python">Python</a></option>
-      <option><a href = "/helps/Django">Django</a></option>
-      <option><a href = "/helps/Computer_Science">Computer Science</a></option>
-    </select>
+  
   </ul>
   <br>
   <br>
@@ -54,8 +34,7 @@
   <br>
   <br>
   <p id = "logoTitle1Million1">Welcome, <%= user %>!</p>
-  <p id = "logoTitle1Million">Helps from <%= cohort %>:</p>
-  <div class = "sectionDiv">
+<p id = "logoTitle1Million">Helps from <%= cohort %>:</p>
   <div class = "line"></div>
   </div>
       <div>
@@ -101,7 +80,7 @@
         <div class = "line"></div>
       <form action="/interestings/create" method="post" id = "newInteresting">
           <input type="text" name="title" placeholder="Title" id = "inputTitle">
-          <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
+          <textarea id = "textArea" maxlength="2000" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
           <br>
           <button type="submit" id="submitButton">Submit!</button>
         </form>

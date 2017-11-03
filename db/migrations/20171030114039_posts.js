@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
       .onDelete("CASCADE")
       .index();
     table.string("title");
-    table.string("content");
+    table.text("content");
     table.integer("upvote");
     table.integer("downvote");
     table.integer("type_id")
