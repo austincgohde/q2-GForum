@@ -120,6 +120,8 @@ module.exports = {
       .then((result) => {
         let posts = result.rows;
 
+        delete req.session.type;
+
         for(let i = 0; i < posts.length; i++) {
           let timeFormat = String(posts[i].created_at).slice(0, 21);
           posts[i].created_at = timeFormat;
