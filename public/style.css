@@ -48,7 +48,7 @@ html {
 }
 
 .overviewBody {
-  background: black url("./orange2.jpeg") no-repeat center center fixed;
+  background: black url("./water.jpeg") no-repeat;
       background-size: cover;
 }
 
@@ -63,7 +63,7 @@ html {
 }
 
 .subjectBody {
-  background: black url("./orange6.jpeg") no-repeat center center fixed;
+  background: black url("./orange2.jpeg") no-repeat center center fixed;
       background-size: cover;
 }
 
@@ -304,30 +304,27 @@ li a {
   height: 35px;
   margin-top: 50px;
   margin-bottom: 0;
-text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);
+  text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);
 }
 
 #logoTitleOverview {
   font-family: 'Six Caps', sans-serif;
-  font-size: 150px;
-  display: inline-block;
-  color: #62b4c2;
-  line-height: 34px;
+  font-size: 100px;
+  color: black;
+  line-height: 20px;
   height: 35px;
   margin-top: 100px;
   margin-left: 60px;
-  float: right;
-  margin-bottom: 10px;
-  margin-right: 70px;
-text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
+  text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);
+}
 
 #quoteTitle {
   font-family: 'Grand Hotel', cursive;
   font-size: 55px;
   display: inline-block;
   background: -webkit-linear-gradient(orange, #ED5A2A);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   padding: 0;
   margin-bottom: 0;
   margin-left: 10px;
@@ -347,16 +344,47 @@ text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
 }
 
 #logoTitle {
-  font-family: 'Grand Hotel', cursive;
+  font-family: 'Six Caps', sans-serif;
   font-size: 100px;
-  display: inline-block;
-  background: -webkit-linear-gradient(orange, #ED5A2A);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  color: #62b4c2;
   margin-top: 50px;
   margin-bottom: 0;
-  z-index: 50;
 }
+
+#logoTitle1Million {
+  font-family: 'Grand Hotel', cursive;
+  font-size: 100px;
+  color: black;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 0;
+  line-height: 30px;
+}
+
+#logoTitle1Million1 {
+  font-family: 'Six Caps', sans-serif;
+  font-size: 150px;
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 55px;
+  margin-left: 50px;
+  -webkit-animation: pulsate 3s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.5;
+  }
+
+  @-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+  }
 
 
 #logoTitle2 {
@@ -457,8 +485,21 @@ text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
 
 .flex-item:hover {
   box-shadow: 3px 3px 5px 2px black;
-  background-color: #E3AF8E;
+  background-color: orange;
   cursor: pointer;
+}
+
+#standardBody1 {
+  font-family: 'Grand Hotel', cursive;
+  font-size: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#standardBody {
+  font-family: 'Mada', sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #standardBody2 {
@@ -482,20 +523,6 @@ text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
   padding: 0
 }
 
-
-#standardBody1 {
-  font-family: 'Grand Hotel', cursive;
-  font-size: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-#standardBody {
-  font-family: 'Mada', sans-serif;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
 #quoteText {
   font-family: 'Mada', sans-serif;
   padding-left: 10px;
@@ -505,7 +532,6 @@ text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
   font-size: 15px;
 }
 
-
 .login {
 	position: absolute;
 	top: 50%;
@@ -514,7 +540,12 @@ text-shadow: 4px 4px 2px rgba(77, 82, 79, 1);}
 	width:300px;
 	height:300px;
 }
-.login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+
+.login h1 {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0,0,0,0.3);
+  letter-spacing:1px;
+  text-align:center; }
 
 input {
 	width: 80%;
@@ -535,7 +566,10 @@ input {
 	-ms-transition: box-shadow .5s ease;
 	transition: box-shadow .5s ease;
 }
-input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+input:focus {
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+}
 
 btn btn-primary btn-block btn-large
 
@@ -633,6 +667,7 @@ btn btn-primary btn-block btn-large
   margin-left: 10px;
   margin-bottom: 20px;
 }
+
 #contentAuthor {
   font-family: 'Six Caps', sans-serif;
   font-size: 30px;
@@ -787,7 +822,7 @@ btn btn-primary btn-block btn-large
 }
 
 .please {
-  font-size: 20px;
+  font-size: 30px;
   margin: 0;
   padding: 0;
   line-height: 20px;
@@ -795,6 +830,7 @@ btn btn-primary btn-block btn-large
     -webkit-animation-iteration-count: infinite;
     opacity: 0.5;
 }
+
 @-webkit-keyframes pulsate {
     0% {
         opacity: 0.5;
@@ -843,21 +879,17 @@ btn btn-primary btn-block btn-large
   color: white;
 }
 
-/* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
 }
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
+.flip-container:hover .flipper, .flip-container.hover .flipper {
 		transform: rotateY(180deg);
 	}
-
 .flip-container, .front, .back {
 	width: 320px;
 	height: 480px;
 }
 
-/* flip speed goes here */
 .flipper {
 	transition: 0.6s;
 	transform-style: preserve-3d;
@@ -865,7 +897,6 @@ btn btn-primary btn-block btn-large
 	position: relative;
 }
 
-/* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
 
@@ -874,24 +905,19 @@ btn btn-primary btn-block btn-large
 	left: 0;
 }
 
-/* front pane, placed above back */
 .front {
 	z-index: 2;
-	/* for firefox 31 */
 	transform: rotateY(0deg);
 }
 
-/* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
 }
-
 
 #techNewsTitle {
   font-family: !important 'Mada', sans-serif;
   font-size: !important 15px;
 }
-
 #techNewsAuthor {
   font-family: !important 'Mada', sans-serif;
   font-size: !important 15px;
@@ -904,12 +930,10 @@ btn btn-primary btn-block btn-large
   font-family: !important 'Mada', sans-serif;
   font-size: !important 15px;
 }
-
 #techNewsTitle2 {
   font-family: !important 'Mada', sans-serif;
   font-size: !important 15px;
 }
-
 #techNewsAuthor2 {
   font-family: !important 'Mada', sans-serif;
   font-size: !important 15px;
@@ -922,12 +946,10 @@ btn btn-primary btn-block btn-large
   font-family: !important 'Mada', sans-serif;
   font-size: !important 15px;
 }
-
 #techNewsTitle3 {
   font-family: !important 'Mada', sans-serif;
   font-size: !important 15px;
 }
-
 #techNewsAuthor3 {
   font-family: !important 'Mada', sans-serif;
   font-size: !important 15px;
@@ -1056,7 +1078,7 @@ btn btn-primary btn-block btn-large
     display: block;
     height: 1;
     border: 0;
-    border-top: 5px solid #DD643B;
+    border-top: 5px solid #62b4c2;
     margin: 1em 0;
     padding: 0;
 }
@@ -1064,7 +1086,7 @@ btn btn-primary btn-block btn-large
 .delete {
   background-color:red;
   border-radius: 10px;
-  width: 80%;
+  width: 30%;
   font-family:'Mada', sans-serif;
   font-size: 17px;
   color: white;
@@ -1083,9 +1105,16 @@ btn btn-primary btn-block btn-large
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-image: url('https://images.unsplash.com/photo-1495085461086-ae0ad0a8fd74?auto=format&fit=crop&w=1500&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 2s; /* Firefox < 16 */
+      -ms-animation: fadein 2s; /* Internet Explorer */
+       -o-animation: fadein 2s; /* Opera < 12.1 */
+          animation: fadein 2s;
+
+        }
+
 }
 
 /* Modal Content */
@@ -1110,4 +1139,19 @@ btn btn-primary btn-block btn-large
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+#slideshow {
+    margin-right: 200px;
+    float: right;
+    width: 580px;
+    height: 240px;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+    -moz-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+    box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }

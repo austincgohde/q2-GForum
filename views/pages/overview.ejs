@@ -9,6 +9,8 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Mada|Six+Caps|Grand+Hotel" rel="stylesheet">
       <link rel="shortcut icon" href="/titlepic.jpeg">
+      <script type="text/javascript" src="/scripts/script.js" defer></script>
+
       <link rel="apple-touch-icon" href="/titlepic.jpeg">
   </head>
 <body class = "overviewBody">
@@ -29,9 +31,20 @@
   <br>
   <br>
   <br>
-  <p id = "logoTitleOverview">Welcome, <%= user %>!</p>
+  <div id="slideshow">
+   <div>
+     <img src="/orange5.jpeg" height="224" width="560">
+   </div>
+   <div>
+     <img src="/orange6.jpeg" height="224" width="560">
+   </div>
+   <div>
+     <img src="/orange7.jpeg" height="224" width="560">
+   </div>
+</div>
+  <p id = "logoTitle1Million1">Welcome, <%= user %>!</p>
+  <p id = "logoTitle1Million">Helps from <%= user.cohort %>:</p>
   <div class = "sectionDiv">
-  <p id = "logoTitle">Helps:</p>
   <div class = "line"></div>
   </div>
       <div>
@@ -57,7 +70,7 @@
         </ul>
       </div>
       <div class = "sectionDiv">
-      <p id = "logoTitle">Interestings:</p>
+      <p id = "logoTitle">Tech News, Updates & Resources:</p>
       <div class = "line"></div>
 
     </div>
@@ -73,7 +86,7 @@
       </div>
       <div class = 'newSubmit'>
 
-        <p id = "logoTitle">Submit a New Interesting:</p>
+        <p id = "logoTitle">Submit Something Interesting:</p>
         <div class = "line"></div>
       <form action="/interestings/create" method="post" id = "newInteresting">
           <input type="text" name="title" placeholder="Title" id = "inputTitle">
