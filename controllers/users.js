@@ -13,7 +13,11 @@ module.exports = {
       req.session.errMsg = "";
     }
 
-    res.render("pages/index", { errMsg: req.session.errMsg });
+    if(!req.session.delMsg) {
+      req.session.delMsg = "";
+    }
+
+    res.render("pages/index", { errMsg: req.session.errMsg, delMsg: req.session.delMsg });
 
   },
 
