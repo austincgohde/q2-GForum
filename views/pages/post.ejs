@@ -91,12 +91,15 @@ let postUpFn = (num) => {
   $.get(("/upvote/post/"+num), (data) => {
     console.log(data);
     let upTag = document.getElementsByClassName("postUp");
+    let downTag = document.getElementsByClassName("postDown");
 
     for(let i = 0; i < upTag.length; i++) {
       console.log("hello");
       if(upTag[i].attributes.onclick.value.includes(num)) {
         upTag[i].innerHTML = "&#8593;" + data[0].upvote + " Upvotes";
         upTag[i].attributes.onclick.value = "";
+        downTag[i].attributes.onclick.value = "";
+
         return
       }
     }
@@ -107,12 +110,15 @@ let postDownFn = (num) => {
   $.get(("/downvote/post/"+num), (data) => {
     console.log(data);
     let downTag = document.getElementsByClassName("postDown");
+    let upTag = document.getElementsByClassName("postUp");
 
     for(let i = 0; i < downTag.length; i++) {
       console.log("hello");
       if(downTag[i].attributes.onclick.value.includes(num)) {
         downTag[i].innerHTML = "&#8595;" + data[0].downvote + " Downvotes";
         downTag[i].attributes.onclick.value = "";
+        upTag[i].attributes.onclick.value = "";
+
         return
       }
     }
@@ -123,12 +129,15 @@ let commentUpFn = (num) => {
   $.get(("/upvote/comment/"+num), (data) => {
     console.log(data);
     let upTag = document.getElementsByClassName("commentUp");
+    let downTag = document.getElementsByClassName("commentDown");
 
     for(let i = 0; i < upTag.length; i++) {
       console.log("hello");
       if(upTag[i].attributes.onclick.value.includes(num)) {
         upTag[i].innerHTML = "&#8593;" + data[0].upvote + " Upvotes";
         upTag[i].attributes.onclick.value = "";
+        downTag[i].attributes.onclick.value = "";
+
         return
       }
     }
@@ -139,12 +148,15 @@ let commentDownFn = (num) => {
   $.get(("/downvote/comment/"+num), (data) => {
     console.log(data);
     let downTag = document.getElementsByClassName("commentDown");
+    let upTag = document.getElementsByClassName("commentUp");
 
     for(let i = 0; i < downTag.length; i++) {
       console.log("hello");
       if(downTag[i].attributes.onclick.value.includes(num)) {
         downTag[i].innerHTML = "&#8595;" + data[0].downvote + " Downvotes";
         downTag[i].attributes.onclick.value = "";
+        upTag[i].attributes.onclick.value = "";
+
         return
       }
     }
