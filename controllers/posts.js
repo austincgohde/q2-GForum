@@ -142,7 +142,6 @@ const encryption = require("../config/encryption.js");
         },
 
 //votes:
-
 //update upvotes and downvotes to display on individual post pages.
 
     upvote: function(req, res){
