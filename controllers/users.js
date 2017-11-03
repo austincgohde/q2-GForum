@@ -104,7 +104,7 @@ module.exports = {
   },
 
   getOverview: (req, res) => {
-    knex.raw(`SELECT posts.title, posts.content, posts.created_at, cohorts.name AS cohort
+    knex.raw(`SELECT posts.title, posts.content, posts.created_at, cohorts.name AS cohortg
       FROM posts
       JOIN cohorts ON cohorts.id = users.cohort_id
       WHERE posts.type_id = 1
