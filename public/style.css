@@ -1074,17 +1074,8 @@ btn btn-primary btn-block btn-large
 }
 
 
-.line {
-    display: block;
-    height: 1;
-    border: 0;
-    border-top: 5px solid #62b4c2;
-    margin: 1em 0;
-    padding: 0;
-}
-
 .delete {
-  background-color:red;
+  background-color:orange;
   border-radius: 10px;
   width: 30%;
   font-family:'Mada', sans-serif;
