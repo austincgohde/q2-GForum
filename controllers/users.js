@@ -49,7 +49,6 @@ module.exports = {
           })
       })
       .catch((err) => {
-        console.error(err);
         req.session.errMsg = "The email and password provided are incorrect. Please try again.";
         req.session.save(() => {
           res.redirect("/");
@@ -104,6 +103,7 @@ module.exports = {
 
   logout: (req, res) => {
     delete req.session.user;
+    req.session.errMsg = "";
     req.session.save(() => {
       res.redirect("/");
     })
@@ -141,13 +141,13 @@ module.exports = {
   },
 
   updateProfile: (req, res) => {
-    if(req.body.currentPassword && req.body.newPassword) {
+    if(req.body.password && req.body.newPassword) {
       knex("users")
         .where("id", req.session.user.id)
         .then((result) => {
           let encryptedUser = result[0];
           let user = {
-            password: req.body.currentPassword
+            password: req.body.password
           }
           encryption.check(encryptedUser, user)
             .then((isValid) => {
