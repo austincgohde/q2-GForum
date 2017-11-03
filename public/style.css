@@ -1140,18 +1140,3 @@ btn btn-primary btn-block btn-large
     text-decoration: none;
     cursor: pointer;
 }
-
-#slideshow {
-    margin-right: 200px;
-    float: right;
-    width: 580px;
-    height: 240px;
-    padding: 10px;
-    border-radius: 10px;
-    -webkit-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
-    -moz-box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
-    box-shadow: 6px 6px 37px 11px rgba(0,0,0,0.58);
-    overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
