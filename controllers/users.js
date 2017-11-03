@@ -104,8 +104,10 @@ module.exports = {
   },
 
   getOverview: (req, res) => {
-    knex.raw(`SELECT posts.title, posts.content, users.first_name, users.last_name, posts.created_at
-      FROM posts JOIN users ON users.id = posts.user_id WHERE posts.type_id = 1
+    knex.raw(`SELECT posts.title, posts.content, posts.created_at, cohorts.name AS cohort
+      FROM posts
+      JOIN cohorts ON cohorts.id = users.cohort_id
+      WHERE posts.type_id = 1
       ORDER BY posts.created_at DESC`)
       .then((result) => {
         let posts = result.rows;
@@ -115,7 +117,7 @@ module.exports = {
           posts[i].created_at = timeFormat;
         }
 
-        res.render("pages/overview", { interestings: result.rows, user: req.session.user.name});
+        res.render("pages/overview", { interestings: posts, user: req.session.user.name});
       })
   },
 
