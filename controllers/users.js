@@ -189,6 +189,7 @@ module.exports = {
       .del()
       .then(() => {
         req.session.user.id = {};
+        req.session.delMsg = "Sorry, you left us - Check out Galbvanize page or click here to create a new profile!"
         req.session.save(() => {
           res.redirect("/")
         })
