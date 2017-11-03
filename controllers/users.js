@@ -23,6 +23,7 @@ module.exports = {
 
   check: (req, res) => {
     knex("users")
+      .select("users.id", "users.first_name", "users.auth_level", "users.password", "cohorts.name")
       .where("email", req.body.email)
       .join("cohorts", "cohorts.id", "users.cohort_id")
       .then((result) => {
@@ -107,8 +108,9 @@ module.exports = {
   },
 
   getOverview: (req, res) => {
-    knex.raw(`SELECT posts.title, posts.content, posts.created_at
+    knex.raw(`SELECT posts.title, posts.content, posts.created_at, users.first_name, users.last_name
       FROM posts
+      JOIN users ON users.id = posts.user_id
       WHERE posts.type_id = 1
       ORDER BY posts.created_at DESC`)
       .then((result) => {
