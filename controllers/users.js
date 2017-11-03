@@ -24,8 +24,10 @@ module.exports = {
   check: (req, res) => {
     knex("users")
       .where("email", req.body.email)
+      .join("cohorts", "cohorts.id", "users.cohort_id")
       .then((result) => {
         let user = result[0]
+        console.log(user);
         encryption.check(user, req.body)
           .then((isValid) => {
             if(isValid) {
@@ -33,6 +35,7 @@ module.exports = {
                 id: user.id,
                 name: user.first_name,
                 auth_level: user.auth_level,
+                cohort: user.name
               }
               req.session.save(() => {
                 res.redirect("/overview");
@@ -104,9 +107,8 @@ module.exports = {
   },
 
   getOverview: (req, res) => {
-    knex.raw(`SELECT posts.title, posts.content, posts.created_at, cohorts.name AS cohortg
+    knex.raw(`SELECT posts.title, posts.content, posts.created_at
       FROM posts
-      JOIN cohorts ON cohorts.id = ${req.session.user.id}
       WHERE posts.type_id = 1
       ORDER BY posts.created_at DESC`)
       .then((result) => {
@@ -117,7 +119,7 @@ module.exports = {
           posts[i].created_at = timeFormat;
         }
 
-        res.render("pages/overview", { interestings: posts, user: req.session.user.name});
+        res.render("pages/overview", { interestings: posts, user: req.session.user.name, cohort: req.session.user.cohort});
       })
   },
 
