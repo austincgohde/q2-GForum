@@ -62,8 +62,10 @@ exports.seed = function(knex, Promise) {
         {user_id: 3, title: "Having a .Net issue", content: "Can you take a look at this and explain why its not working?", upvote: 1, downvote: 0, type_id: 16},
         {user_id: 1, title: "Django can be used for this problem??", content: "Can you take a look at this and explain why its not working?", upvote: 1, downvote: 0, type_id: 18},
         {user_id: 2, title: "WAT?????", content: "Can you take a look at this and explain why its not working?", upvote: 1, downvote: 0, type_id: 19},
-
-
+        {user_id: 1, title: "Look how interesting this is!!!", content: "Can you take a look at this? How interesting, right???", upvote: 1, downvote: 0, type_id: 1},
+        {user_id: 2, title: "WAT?????", content: "How cool!!", upvote: 1, downvote: 0, type_id: 1},
+        {user_id: 3, title: "Interesting", content: "This is super interesting!!", upvote: 1, downvote: 0, type_id: 1},
+        {user_id: 3, title: "Check this out!", content: "This is super interesting!!", upvote: 1, downvote: 0, type_id: 1},
 
       ]);
     });
