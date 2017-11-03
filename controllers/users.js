@@ -28,7 +28,6 @@ module.exports = {
       .join("cohorts", "cohorts.id", "users.cohort_id")
       .then((result) => {
         let user = result[0]
-        console.log(user);
         encryption.check(user, req.body)
           .then((isValid) => {
             if(isValid) {
@@ -80,6 +79,9 @@ module.exports = {
           }, "*")
           .then((result) => {
             let user = result[0];
+
+            req.session.errMsg = "";
+            req.session.delMsg = "";
 
             req.session.user = {
               id: user.id,
@@ -199,7 +201,8 @@ module.exports = {
       .del()
       .then(() => {
         req.session.user.id = {};
-        req.session.delMsg = "Sorry, you left us - Check out Galbvanize page or click here to create a new profile!"
+        req.session.errMsg = "";
+        req.session.delMsg = "Sorry, you left us - Click below to create a new profile!"
         req.session.save(() => {
           res.redirect("/")
         })
