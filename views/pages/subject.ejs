@@ -57,7 +57,7 @@
     <div class = "line"></div>
   <form action="/helps" method="post" id = "newInteresting">
       <input type="text" name="title" placeholder="Title" id = "inputTitle">
-      <textarea id = "textArea" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
+      <textarea id = "textArea" maxlength="2000" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
       <br>
       <button type="submit" id="submitButton">Submit!</button>
     </form>
