@@ -18,13 +18,13 @@
     <li><span class = "smallLogo">gForum</li>
     <li><a class="active" href="/overview">HOME</a></li>
     <li><a class="active" href="/logout">LOG OUT</a></li>
-    <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
-    <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
-    <li><a class="active" href="https://members.galvanize.com/">MEMBER</a></li>
-    <li><a class="active" href="https://talent.galvanize.com/">TALENT</a></li>
-    <li><a class="active" href="https://gstudents.slack.com/">SLACK</a></li>
-    <li><a class="active" href="https://github.com/">GITHUB</a></li>
-    <li><a class="active" href="https://trello.com/">TRELLO</a></li>
+    <li><a class="active" target="_blank" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
+    <li><a class="active" target="_blank" href="https://learn.galvanize.com/">LEARN</a></li>
+    <li><a class="active" target="_blank" href="https://members.galvanize.com/">MEMBER</a></li>
+    <li><a class="active" target="_blank" href="https://talent.galvanize.com/">TALENT</a></li>
+    <li><a class="active" target="_blank" href="https://gstudents.slack.com/">SLACK</a></li>
+    <li><a class="active" target="_blank" href="https://github.com/">GITHUB</a></li>
+    <li><a class="active" target="_blank" href="https://trello.com/">TRELLO</a></li>
     <li><button class="subjectsBtn" id="myBtn" ><b>SUBJECTS</b></button></li>
   </ul>
     <!-- The Modal -->
@@ -59,8 +59,10 @@
   <br>
   <br>
   <body class = "postBody">
-  <div class = "sectionDiv">
-    <p id = "logoTitle">Post</p>
+    <div class = "sectionDiv">
+      <p id = "logoTitle">Post: <%= post.title %></p>
+    </div>
+    <div class = "interestingsDiv">
     <div id = "postTable">
         <p id = "contentTimestamp">Created on <%= post.created_at %></p>
         <p id = "contentTitle"><%= post.title %><p>
@@ -69,7 +71,7 @@
           <button class = "postUp" onclick="postUpFn(<%= post.id %>)">&#8593;<%= post.upvote %> Upvotes</button>
           <button class = "postDown" onclick="postDownFn(<%= post.id %>)">&#8595; <%= post.downvote %> Downvotes</button>
   </div>
-  </div>
+</div>
   <div class = "sectionDiv">
     <p id = "logoTitle">Comments</p>
   </div>

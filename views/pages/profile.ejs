@@ -17,12 +17,12 @@
     <li><span class = "smallLogo">gForum</li>
     <li><a class="active" href="/overview">HOME</a></li>
     <li><a class="active" href="/logout">LOG OUT</a></li>
-    <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
-    <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
-    <li><a class="active" href="https://members.galvanize.com/">MEMBER</a></li>
-    <li><a class="active" href="https://talent.galvanize.com/">TALENT</a></li>
-    <li><a class="active" href="https://gstudents.slack.com/">SLACK</a></li>
-    <li><a class="active" href="https://github.com/">GITHUB</a></li>
+    <li><a class="active" target="_blank" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
+    <li><a class="active" target="_blank" href="https://learn.galvanize.com/">LEARN</a></li>
+    <li><a class="active" target="_blank" href="https://members.galvanize.com/">MEMBER</a></li>
+    <li><a class="active" target="_blank" href="https://talent.galvanize.com/">TALENT</a></li>
+    <li><a class="active" target="_blank" href="https://gstudents.slack.com/">SLACK</a></li>
+    <li><a class="active" target="_blank" href="https://github.com/">GITHUB</a></li>
   </ul>
 
   <br>
@@ -37,11 +37,11 @@
         <p id = "logoTitle2"><%= user.first_name %>'s Profile</h2>
           <br>
       <form action="/update" method="post" id = "">
-        <input type="text" name="firstName" value="<%= user.first_name %>">
-        <input type="text" name="lastName" value="<%= user.last_name %>">
-        <input type="email" name="email" value="<%= user.email %>">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" placeholder="New Password" name="newPassword">
+        <input type="text" name="firstName" required value="<%= user.first_name %>">
+        <input type="text" name="lastName" required value="<%= user.last_name %>">
+        <input type="email" name="email" required value="<%= user.email %>">
+        <input type="password" name="password" required placeholder="Password">
+        <input type="password" placeholder="New Password" required name="newPassword">
         <button type="submit" class="btn btn-primary btn-block btn-large">Update Profile</button>
       </form>
       <button class="delete" id="myBtn" >Delete Profile</button>

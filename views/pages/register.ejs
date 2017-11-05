@@ -24,20 +24,20 @@
       <p id = "logoTitleReg">gForum</p>
       <p id = "logoSubTitle">For All Things Interesting and Helpful</p>
       <form action="/register" method="post" id = "">
-        <input type="text" name="firstName" placeholder="First Name">
-        <input type="text" name="lastName" placeholder="Last Name">
-        <input type="email" name="email" placeholder="Email">
+        <input type="text" name="firstName" required placeholder="First Name">
+        <input type="text" name="lastName" required placeholder="Last Name">
+        <input type="email" name="email" required placeholder="Email">
         <br>
-        <select name="cohort" class = "registerCohortSelect">
+        <select name="cohort" required class = "registerCohortSelect">
                   <option disabled selected>Select Cohort</option>
                  <% for(let i = 0; i < cohorts.length; i++) { %>
-                   <option value="<%= cohorts[i].id %>"><%= cohorts[i].name %></option>
+                   <option required value="<%= cohorts[i].id %>"><%= cohorts[i].name %></option>
                  <% } %>
                </select>
        <br>
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" placeholder="Confirm Password">
-        <button type="submit" class="btn btn-primary btn-block btn-large">Sign me up!</button>
+        <input required type="password" name="password" placeholder="Password">
+        <input required type="password" placeholder="Confirm Password">
+        <button required type="submit" class="btn btn-primary btn-block btn-large">Sign me up!</button>
         </form>
         <br>
         <br>

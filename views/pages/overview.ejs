@@ -18,14 +18,13 @@
     <li><span class = "smallLogo">gForum</li>
     <li><a class="active" href="/profile">PROFILE</a></li>
     <li><a class="active" href="/logout">LOG OUT</a></li>
-    <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
-    <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
-    <li><a class="active" href="https://members.galvanize.com/">MEMBER</a></li>
-    <li><a class="active" href="https://talent.galvanize.com/">TALENT</a></li>
-    <li><a class="active" href="https://gstudents.slack.com/">SLACK</a></li>
-    <li><a class="active" href="https://github.com/">GITHUB</a></li>
-    <li><a class="active" href="https://trello.com/">TRELLO</a></li>
-
+    <li><a class="active" target="_blank" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
+    <li><a class="active" target="_blank" href="https://learn.galvanize.com/">LEARN</a></li>
+    <li><a class="active" target="_blank" href="https://members.galvanize.com/">MEMBER</a></li>
+    <li><a class="active" target="_blank" href="https://talent.galvanize.com/">TALENT</a></li>
+    <li><a class="active" target="_blank" href="https://gstudents.slack.com/">SLACK</a></li>
+    <li><a class="active" target="_blank" href="https://github.com/">GITHUB</a></li>
+    <li><a class="active" target="_blank" href="https://trello.com/">TRELLO</a></li>
   </ul>
   <br>
   <br>
@@ -33,8 +32,11 @@
   <br>
   <br>
   <p id = "logoTitle1Million1">Welcome, <%= user %>!</p>
-<p id = "logoTitle1Million">Helps from <%= cohort %></p>
-  </div>
+
+  <div class = "sectionDiv">
+    <p id = "logoTitle">Helps from <%= cohort %></p>
+</div>
+    </div>
       <div>
       <ul class="flex-container">
           <a href = "/helps/HTML"><li class="flex-item"><img src="../html.png" height = "150px"alt="HTML" title="HTML"></li></a>
@@ -70,16 +72,17 @@
           </div>
         <% } %>
       </div>
+    </div>
       <div class = 'newSubmit'>
-
         <p id = "logoTitle">Submit Something Interesting</p>
       <form action="/interestings/create" method="post" id = "newInteresting">
-          <input type="text" name="title" placeholder="Title" id = "inputTitle">
-          <textarea id = "textArea" maxlength="2000" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
+          <input type="text" name="title" placeholder="Title" required id = "inputTitle">
+          <textarea id = "textArea" maxlength="2000" name="content" form="newInteresting" required cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
           <br>
           <button type="submit" id="submitButton">Submit!</button>
         </form>
       </div>
+    </div>
       <br>
       <br>
       <br>

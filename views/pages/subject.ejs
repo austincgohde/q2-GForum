@@ -19,13 +19,13 @@
     <li><a class="active" href="/profile">PROFILE</a></li>
     <li><a class="active" href="/overview"><b>HOME</b></a></li>
     <li><a class="active" href="/logout"><b>LOG OUT</b></a></li>
-    <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
-    <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
-    <li><a class="active" href="https://members.galvanize.com/">MEMBER</a></li>
-    <li><a class="active" href="https://talent.galvanize.com/">TALENT</a></li>
-    <li><a class="active" href="https://gstudents.slack.com/">SLACK</a></li>
-    <li><a class="active" href="https://github.com/">GITHUB</a></li>
-    <li><a class="active" href="https://trello.com/">TRELLO</a></li>
+    <li><a class="active" target="_blank" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
+    <li><a class="active" target="_blank" href="https://learn.galvanize.com/">LEARN</a></li>
+    <li><a class="active" target="_blank" href="https://members.galvanize.com/">MEMBER</a></li>
+    <li><a class="active" target="_blank" href="https://talent.galvanize.com/">TALENT</a></li>
+    <li><a class="active" target="_blank" href="https://gstudents.slack.com/">SLACK</a></li>
+    <li><a class="active" target="_blank" href="https://github.com/">GITHUB</a></li>
+    <li><a class="active" target="_blank" href="https://trello.com/">TRELLO</a></li>
     <li><button class="subjectsBtn" id="myBtn" ><b>SUBJECTS</b></button></li>
     </ul>
     <!-- The Modal -->
@@ -86,8 +86,8 @@
   <div class = 'newSubmit'>
     <p id = "logoTitle"> New <%= type.name %> Post:</p>
   <form action="/helps" method="post" id = "newInteresting">
-      <input type="text" name="title" placeholder="Title" id = "inputTitle">
-      <textarea id = "textArea" maxlength="2000" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
+      <input type="text" name="title" placeholder="Title" id = "inputTitle" required>
+      <textarea id = "textArea" maxlength="2000" name="content" form="newInteresting" required cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
       <br>
       <button type="submit" id="submitButton">Submit!</button>
     </form>
