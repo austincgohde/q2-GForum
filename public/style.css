@@ -259,7 +259,8 @@ li a {
   opacity: .85;
   padding-top: 15px;
   width: 900px;
-  min-width: 900px;
+  max-height: 530px;
+  overflow-y: scroll;
   overflow-y: scroll;
   margin-top: 40px;
   border-radius: 8px;
