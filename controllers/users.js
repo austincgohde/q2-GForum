@@ -211,5 +211,10 @@ module.exports = {
           res.redirect("/")
         })
       })
+  },
+
+  about: (req, res) => {
+    res.render("pages/about");
   }
+
 };
