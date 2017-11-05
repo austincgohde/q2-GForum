@@ -411,8 +411,8 @@ li a {
   color: black;
   line-height: 34px;
   height: 35px;
-  margin-top: 50px;
-  margin-bottom: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;;
   z-index: 2;
 }
 
@@ -634,10 +634,9 @@ btn btn-primary btn-block btn-large
 
 #postTable {
   padding: 5px;
-  width: 100%;
+  width: 97%;
   height: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 20px;
   color: black;
   background-color: white;
   opacity: .9;
@@ -708,10 +707,9 @@ btn btn-primary btn-block btn-large
 
 #postTable2 {
   padding: 5px;
-  width: 100%;
+  width: 97%;
   height: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
   color: black;
   background-color: white;
   opacity: .95;
@@ -841,7 +839,7 @@ btn btn-primary btn-block btn-large
 
 .imageLink2 {
   border: 2px solid white;
-  border-radius: 10px;
+  border-radius: 1px;
 }
 
 .please {
@@ -1107,6 +1105,7 @@ btn btn-primary btn-block btn-large
   color: white;
   padding-top: 5px;
   padding-bottom: 5px;
+
   margin-top: 5px;
 }
 
@@ -1131,6 +1130,7 @@ btn btn-primary btn-block btn-large
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
+    overflow: scroll;
     left: 0;
     top: 0;
     width: 100%; /* Full width */

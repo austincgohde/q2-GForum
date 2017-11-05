@@ -61,7 +61,6 @@
   <body class = "postBody">
   <div class = "sectionDiv">
     <p id = "logoTitle">Post</p>
-    <div class = "line"></div>
     <div id = "postTable">
         <p id = "contentTimestamp">Created on <%= post.created_at %></p>
         <p id = "contentTitle"><%= post.title %><p>
@@ -73,7 +72,6 @@
   </div>
   <div class = "sectionDiv">
     <p id = "logoTitle">Comments</p>
-    <div class = "line"></div>
   </div>
   <div class = "interestingsDiv">
     <% for(let i = 0; i < comments.length; i++) { %>
@@ -88,7 +86,6 @@
   </div>
   <div class = 'newSubmit'>
     <p id = "logoTitle"> New Comment:</p>
-    <div class = "line"></div>
   <form action="/comment/create" method="post" id = "newInteresting">
       <textarea id = "textArea" maxlength="2000" name="content" form="newInteresting" cols="138" rows="10" placeholder="Enter comment here"></textarea>
       <br>
