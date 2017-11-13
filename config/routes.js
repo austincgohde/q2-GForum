@@ -14,6 +14,8 @@ app.get('/register', users.getRegister);
 
 app.post('/register', users.create);
 
+app.get('/about', users.about);
+
 app.use(userAuth);
 
 app.get("/delete", users.delProfile);

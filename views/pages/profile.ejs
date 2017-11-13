@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>gForum</title>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="/style.css">
+      <link rel="stylesheet" href="../style/style.css">
       <script type="text/javascript" src="/scripts/script.js" defer></script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -17,31 +17,31 @@
     <li><span class = "smallLogo">gForum</li>
     <li><a class="active" href="/overview">HOME</a></li>
     <li><a class="active" href="/logout">LOG OUT</a></li>
-    <li><a class="active" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
-    <li><a class="active" href="https://learn.galvanize.com/">LEARN</a></li>
-    <li><a class="active" href="https://members.galvanize.com/">MEMBER</a></li>
-    <li><a class="active" href="https://talent.galvanize.com/">TALENT</a></li>
-    <li><a class="active" href="https://gstudents.slack.com/">SLACK</a></li>
-    <li><a class="active" href="https://github.com/">GITHUB</a></li>
+    <li><a class="active" target="_blank" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
+    <li><a class="active" target="_blank" href="https://learn.galvanize.com/">LEARN</a></li>
+    <li><a class="active" target="_blank" href="https://members.galvanize.com/">MEMBER</a></li>
+    <li><a class="active" target="_blank" href="https://talent.galvanize.com/">TALENT</a></li>
+    <li><a class="active" target="_blank" href="https://gstudents.slack.com/">SLACK</a></li>
+    <li><a class="active" target="_blank" href="https://github.com/">GITHUB</a></li>
   </ul>
-    
+
   <br>
   <br>
   <br>
   <div class = 'registerContainer'>
     <div id = "registerContent">
-      <img src = "/gettoGalvanize-logo.svg" width="200px;">
+      <img src = "../photos/gettoGalvanize-logo.svg" width="200px;">
       <br>
       <p id = "logoTitleReg">gForum</p>
       <br>
-        <p id = "logoTitle2"><%= user.first_name %>'s Profile</h2>
+        <p id = "logoTitle2"><%= user.first_name %>'s Profile</p>
           <br>
       <form action="/update" method="post" id = "">
-        <input type="text" name="firstName" value="<%= user.first_name %>">
-        <input type="text" name="lastName" value="<%= user.last_name %>">
-        <input type="email" name="email" value="<%= user.email %>">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" placeholder="New Password" name="newPassword">
+        <input type="text" name="firstName" required value="<%= user.first_name %>">
+        <input type="text" name="lastName" required value="<%= user.last_name %>">
+        <input type="email" name="email" required value="<%= user.email %>">
+        <input type="password" name="password" required placeholder="Password">
+        <input type="password" placeholder="New Password" required name="newPassword">
         <button type="submit" class="btn btn-primary btn-block btn-large">Update Profile</button>
       </form>
       <button class="delete" id="myBtn" >Delete Profile</button>
@@ -59,7 +59,7 @@
     </div>
   </div>
   <ul class = "footer" style="list-style: none;">
-    <li><a class="active" >&copy; 2017 gForum - By g66: Charlotte-Anne Spencer | Austin Gohde | Trevor Young</li>
+    <li><p id="footerText" >&copy; 2017 gForum - By g66: Austin Gohde | Charlotte Anne Spencer | Trevor Young</p></li>
   </ul>
 </body>
 </html>
