@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>gForum</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="../style/style.css">
+      <script type="text/javascript" src="/scripts/script.js" defer></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Mada|Six+Caps|Grand+Hotel" rel="stylesheet">
+      <link rel="shortcut icon" href="/titlepic.jpeg">
+      <link rel="apple-touch-icon" href="/titlepic.jpeg">
+  </head>
+  <body class = "subjectBody">
+  <ul class = "navbar" style="list-style: none;">
+    <li><span class = "smallLogo">gForum</li>
+    <li><a class="active" href="/profile">PROFILE</a></li>
+    <li><a class="active" href="/overview"><b>HOME</b></a></li>
+    <li><a class="active" href="/logout"><b>LOG OUT</b></a></li>
+    <li><a class="active" target="_blank" href="https://www.galvanize.com/phoenix">GALVANIZE</a></li>
+    <li><a class="active" target="_blank" href="https://learn.galvanize.com/">LEARN</a></li>
+    <li><a class="active" target="_blank" href="https://members.galvanize.com/">MEMBER</a></li>
+    <li><a class="active" target="_blank" href="https://talent.galvanize.com/">TALENT</a></li>
+    <li><a class="active" target="_blank" href="https://gstudents.slack.com/">SLACK</a></li>
+    <li><a class="active" target="_blank" href="https://github.com/">GITHUB</a></li>
+    <li><a class="active" target="_blank" href="https://trello.com/">TRELLO</a></li>
+    <li><button class="subjectsBtn" id="myBtn" ><b>SUBJECTS</b></button></li>
+    </ul>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div>
+        <ul class="flex-container2">
+            <a href = "/helps/HTML"><li class="flex-item"><img src="../photos/html.png" height = "150px"alt="HTML" title="HTML"></li></a>
+            <a href = "/helps/CSS"><li class="flex-item"><img src="../photos/css.png" height = "150px"alt="CSS" title = "CSS"></li></a>
+            <a href = "/helps/JS"><li class="flex-item"><img src="../photos/js.png" height = "140px"alt="JS" title = "Javascript"></li></a>
+            <a href = "/helps/jQuery_&_DOM"><li class="flex-item"><img src="../photos/jquery.png" height = "100px"alt="jQuery & The DOM" title = "jQuery & The DOM"></li></a>
+            <a href = "/helps/Ajax_&_HTTP"><li class="flex-item"><img src="../photos/ajax.png" height = "100px"alt="AJAX & HTTP Requests" title = "AJAX & HTTP Requests"></li></a>
+            <a href = "/helps/Node"><li class="flex-item"><img src="../photos/node.png" height = "100px"alt="Node JS" title = "Node JS"></li></a>
+            <a href = "/helps/Express"><li class="flex-item"><img src="../photos/express.png" height = "40px"alt="EXPRESS" title = "EXPRESS"></li></a>
+            <a href = "/helps/Knex"><li class="flex-item"><img src="../photos/knex.png" height = "60px"alt="KNEX" title = "KNEX"></li></a>
+            <a href = "/helps/React"><li class="flex-item"><img src="../photos/react.png" height = "60px"alt="React" title = "React"></li></a>
+            <a href = "/helps/Redux"><li class="flex-item"><img src="../photos/redux.png" height = "60px"alt="Redux" title = "Redux"></li></a>
+            <a href = "/helps/Angular"><li class="flex-item"><img src="../photos/angular.png" height = "50px"alt="Angular" title = "Angular"></li></a>
+            <a href = "/helps/Vue"><li class="flex-item"><img src="../photos/vue.png" height = "110px"alt="Vue" title = "Vue"></li></a>
+            <a href = "/helps/Java"><li class="flex-item"><img src="../photos/java.png" height = "100px"alt="Java" title = "Java"></li></a>
+            <a href = "/helps/C%23"><li class="flex-item"><img src="../photos/csharp.png" height = "110px"alt="C#" title = "C#"></li></a>
+            <a href = "/helps/.Net"><li class="flex-item"><img src="../photos/net.png" height = "100px"alt=".net" title = ".net"></li></a>
+            <a href = "/helps/Python"><li class="flex-item"><img src="../photos/python.png" height = "70px"alt="Python" title = "Python"></li></a>
+            <a href = "/helps/Django"><li class="flex-item"><img src="../photos/django.png" height = "60px"alt="Django" title = "Django"></li></a>
+            <a href = "/helps/Computer_Science"><li class="flex-item"><img src="../photos/cs.png" height = "60px"alt="Computer Science" title = "Computer Science"></li></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class = "sectionDiv">
+  <p id = "logoTitleMain6">Subject: <%= type.name %></p>
+  </div>
+  <div class = "sectionDiv">
+  <p id = "logoTitle">Posts</p>
+  <div class = "line"></div>
+  </div>
+</div>
+<div class = "interestingsDiv">
+  <% for(let i = 0; i < posts.length; i++) { %>
+  <a class = "postLinks" href = "/post/<%= posts[i].id %>">
+      <div id = "postTable2">
+      <p id = "contentTimestamp">Created on <%= posts[i].created_at %></p>
+      <p id = "contentTitle"><%= posts[i].title %></p>
+      <p id = "contentAuthor"> by <%= posts[i].first_name %> <%= posts[i].last_name %></p>
+      <p id = "content"><%= posts[i].content %></p>
+      <p id = "content"> &#8593;<%= posts[i].upvote %> Upvotes</p>
+      <p id = "content">&#8595; <%= posts[i].downvote %> Downvotes</p>
+      </div>
+    <% } %>
+  </div></a>
+  <div class = 'newSubmit'>
+    <p id = "logoTitle"> New <%= type.name %> Post:</p>
+  <form action="/helps" method="post" id = "newInteresting">
+      <input type="text" name="title" placeholder="Title" id = "inputTitle" required>
+      <textarea id = "textArea" maxlength="2000" name="content" form="newInteresting" required cols="138" rows="10" placeholder="Enter content here - include relevant URLs"></textarea>
+      <br>
+      <button type="submit" id="submitButton">Submit!</button>
+    </form>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <ul class = "footer" style="list-style: none;">
+    <li><p id="footerText" >&copy; 2017 gForum - By g66: Austin Gohde | Charlotte Anne Spencer | Trevor Young</p></li>
+  </ul>
+</body>
+<script type="text/javascript" src="../scripts/script.js"></script>
+</html>

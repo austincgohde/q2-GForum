@@ -1,0 +1,31 @@
+{
+  "name": "q2-gforum",
+  "version": "1.0.0",
+  "main": "knexfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "connect-session-knex": "^1.4.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "formBuilder": "^2.9.8",
+    "knex": "^0.13.0",
+    "morgan": "^1.9.0",
+    "pg": "^7.3.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austincgohde/q2-GForum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/austincgohde/q2-GForum/issues"
+  },
+  "homepage": "https://github.com/austincgohde/q2-GForum#readme",
+  "description": ""
+}

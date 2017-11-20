@@ -1,0 +1,28 @@
+While in your branch --
+
+  git add .
+  git commit -m "Whatever it is"
+  git pull origin master
+  git push origin YourBranch
+
+
+--If feature is finished--
+
+Message out that the feature is finished
+Everyone repeats first flow
+Then Finished Member --
+  git add .
+  git commit -m "Whatever"
+  git checkout master
+  git merge YourBranch
+  git checkout yourBranch
+
+
+EJS Pages:
+index - log in page
+profile - update and profile information
+register - registration page
+overview - page with all of the types of helps and listing the interesting
+subject - specific language with the posts listed
+post - specific post listing the comments with the post
+resources - Page listing all resources for developers

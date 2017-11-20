@@ -1,0 +1,115 @@
+w<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>gForum</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+      <script type="text/javascript" src="/scripts/script.js" defer></script>
+      <link rel="stylesheet" href="./style/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Mada|Six+Caps|Grand+Hotel" rel="stylesheet">
+      <link rel="shortcut icon" href="/titlepic.jpeg">
+      <link rel="apple-touch-icon" href="/titlepic.jpeg">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  </head>
+<ul class = "navbar" style="list-style: none;">
+  <li><span class = "smallLogo">gForum</li>
+  <li><a class="active" href="/about">ABOUT US</a></li>
+</ul>
+<body class = "homepageBody">
+  <div class = 'container'>
+    <div id = "aboutContent">
+      <p id = "gForum">Welcome to gForum!</p>
+      <p id = "standardBody3">This is a space to connect with your cohort to share helps and interestings in a more useful way.<BR>All <b>websites</b>, <b>docs</b>, <b>cheat-sheets</b>, <b>references</b>, and <b>tutorials</b> - all organized by the units taught in your immersive web development program.</p>
+        <p class = 'please'><i>Please <b>log in</b> or <b><span href = "">register</span></b> to get started!</i><br></p>
+      <br>
+      <br>
+      <p id = "quoteTitle"> Growth Mindset - Quote of the Day:</p>
+      <p id = "quoteText"></p>
+      <span style="z-index:50;font-size:0.9em;"><img src="https://theysaidso.com/branding/theysaidso.png" height="20" width="20" alt="theysaidso.com"/><a href="https://theysaidso.com" title="Powered by quotes from theysaidso.com" style="color: #62b4c2 ; margin-left: 4px; vertical-align: middle;">theysaidso.com</a></span>
+    </div>
+    <br>
+    <div id = "logInContent">
+      <br>
+      <p id = "logoTitleMain">gForum</p>
+      <br>
+      <br>
+      <p id = "logoSubTitle">For All Things Interesting and Helpful</p>
+      <h2 id = "">Login</h2>
+      <form action="/login" method="post" id = "">
+        	<input type="email" name="email" placeholder="Email">
+          <input type="password" name="password" placeholder="Password">
+          <% if (errMsg !== "") {%>
+          <div class="message">
+          <%= errMsg %>
+          </div>
+          <% } %>
+          <button type="submit" class="btn btn-primary btn-block btn-large">Let me in!</button>
+          <% if (delMsg !== "") {%>
+          <div class="message">
+          <%= delMsg %>
+          </div>
+          <% } %>
+        </form>
+        <p id = "standardBody">Not a Member? <a href = "/register" class = "link"><b>Sign Up</b></a></p>
+        <br>
+
+    </div>
+    </div>
+  <div class = "news">
+    <p id = "quoteTitle2"> Today's Tech News:</p>
+    <ul class="flex-container">
+        <li class="flex-item2">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            	<div class="flipper">
+            		<div class="front">
+                  <p id = 'techNewsTitle'></p>
+                  <img id = "imageLink" height = "200px">
+            		</div>
+            		<div class="back">
+                  <p id = 'techNewsAuthor'></p>
+                  <p id = 'techNewsDesc'></p>
+                  <a href = "#newsLink" id = 'newsLink'>Read More!</a>
+                </div>
+            	</div>
+            </div>
+          </li>
+          <li class="flex-item2">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                  <div class="front">
+                    <p id = 'techNewsTitle2'></p>
+                    <img id = "imageLink2" height = "200px">
+                  </div>
+                  <div class="back">
+                    <p id = 'techNewsAuthor2'></p>
+                    <p id = 'techNewsDesc2'></p>
+                    <a href = "#newsLink2" id = 'newsLink2'>Read More!</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="flex-item2">
+              <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                  <div class="flipper">
+                    <div class="front">
+                      <p id = 'techNewsTitle3'></p>
+                      <img id = "imageLink3" height = "200px">
+                    </div>
+                    <div class="back">
+                      <p id = 'techNewsAuthor3'></p>
+                      <p id = 'techNewsDesc3'></p>
+                      <a href = "#newsLink3" id = 'newsLink3'>Read More!</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+  </div>
+  <div class = "thanks">
+  <p>Powered by <a href = "https://newsapi.org/" class = "link2">NewsAPI.org</a></p>
+</div>
+
+</body>
+</html>

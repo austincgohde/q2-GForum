@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>gForum</title>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="./style/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Mada|Six+Caps|Grand+Hotel" rel="stylesheet">
+      <link rel="shortcut icon" href="/titlepic.jpeg">
+      <link rel="apple-touch-icon" href="/titlepic.jpeg">
+  </head>
+
+<body class = "registerBody">
+  <ul class = "navbar" style="list-style: none;">
+    <li><span class = "smallLogo">gForum</li>
+    <li><a class="active" href="/logout"><b>HOME</b></a></li>
+    </ul>
+  <div class = 'registerContainer'>
+    <div id = "registerContent">
+      <br>
+      <p id = "logoTitleReg">gForum</p>
+      <p id = "logoSubTitle">For All Things Interesting and Helpful</p>
+      <form action="/register" method="post" id = "">
+        <input type="text" name="firstName" required placeholder="First Name">
+        <input type="text" name="lastName" required placeholder="Last Name">
+        <input type="email" name="email" required placeholder="Email">
+        <br>
+        <select name="cohort" required class = "registerCohortSelect">
+                  <option disabled selected>Select Cohort</option>
+                 <% for(let i = 0; i < cohorts.length; i++) { %>
+                   <option required value="<%= cohorts[i].id %>"><%= cohorts[i].name %></option>
+                 <% } %>
+               </select>
+       <br>
+        <input required type="password" name="password" placeholder="Password">
+        <input required type="password" placeholder="Confirm Password">
+        <button required type="submit" class="btn btn-primary btn-block btn-large">Sign me up!</button>
+        </form>
+        <br>
+        <br>
+    </div>
+  </div>
+  <ul class = "footer" style="list-style: none;">
+    <li><p id="footerText" >&copy; 2017 gForum - By g66: Austin Gohde | Charlotte Anne Spencer | Trevor Young</p></li>
+  </ul>
+</body>
+</html>
