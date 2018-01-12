@@ -49,6 +49,12 @@ module.exports = {
               })
             }
           })
+          .catch((err) => {
+            req.session.errMsg = "The email and password provided are incorrect. Please try again.";
+            req.session.save(() => {
+              res.redirect("/");
+          })
+        })
       })
       .catch((err) => {
         req.session.errMsg = "The email and password provided are incorrect. Please try again.";
