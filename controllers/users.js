@@ -28,6 +28,12 @@ module.exports = {
       .join("cohorts", "cohorts.id", "users.cohort_id")
       .then((result) => {
         let user = result[0]
+        if(!user){
+          req.session.errMsg = "The email and password provided are incorrect. please try again.";
+          req.session.save(() => {
+            res.redirect("/");
+          })
+        }
         encryption.check(user, req.body)
           .then((isValid) => {
             if(isValid) {
